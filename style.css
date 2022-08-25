@@ -1,0 +1,5083 @@
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------Universal COde------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-color-red : #de6464;
+    --main-color-blue: #0b3f59;
+}
+::placeholder{
+    color: white;
+    opacity: 0.6;
+}
+body, h1, h2, h3, h4, h5,h6, p, a, span, li, table, div{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+div, p, a{
+    font-size: 18px;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------Layout------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.col-1{
+    width: 100%;
+}
+.col-2{
+    width: 50%;
+}
+
+.col-3{
+    width: 33.33%;
+}
+
+.col-4{
+    width: 25%;
+}
+
+.col-5{
+    width: 20%;
+}
+
+
+
+.container{
+    max-width: 1700px;
+    margin: auto;
+
+
+}
+
+.content {
+    padding: 10px;
+}
+
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+video{
+    width: 100%;
+    height: auto;
+}
+section .container{
+    padding: 0 160px 50px 160px;
+
+}
+
+section:nth-of-type(1){
+    margin-top: 80px;
+    
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------Heading/button------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+
+.button{
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 8px 35px;
+    color: var(--main-color-blue) !important;
+    background-color: var(--main-color-red);
+    transition: all 2s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.button:hover{
+     color: var(--main-color-red) !important;
+    background-color: var(--main-color-blue);
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------Nav------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+
+nav {
+    background-color: white;
+    height: 35px;
+    position: sticky;
+    top: 0;  
+    z-index: 5;
+}
+
+nav .container{
+    position: relative;
+    background-color: red !important;
+}
+.moble-nav-item{
+    display: none;
+}
+/*-Nav--------------------------------------------------------------------------------------*/
+/*-----nav-logo-----------------------------------------------------------------------------*/
+.nav-logo{
+    background-image: url(image/logo/fac99648-5208-4424-b213-88669673602f_200x200.png);
+    background-size: contain;
+    background-position:left;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left:1%;
+    top:10%;
+    transition: all 2s;
+}
+.nav-logo:hover{
+    background-image: url(image/logo/4dbd9935-35af-491c-99a7-968af1853e4f_200x200.png);
+}
+
+
+
+/*-Nav--------------------------------------------------------------------------------------*/
+/*-----nav-control-----------------------------------------------------------------------------*/
+.nav-control{
+    background-color: var(--main-color-blue);
+    height: 70px;
+    position: absolute;
+    width: 95%;
+    margin:  0 2% 0 3%;
+    top:50%;
+    transform: translateY(50%);
+    transition: all 1s;
+    box-shadow: 2px 2px 5px white;
+}
+.nav-control-shirnk{
+    width: 0 !important;
+    overflow: hidden;
+}
+.nav-control  .row{
+    justify-content: flex-start;
+    margin-left: 10%;
+    align-items: center;
+    height: 100%;    
+}
+.nav-control a{
+        display: inline-block;
+        font-family: 'Glass Antiqua', cursive !important;
+        color: var(--main-color-red);
+        font-weight: bold;
+        font-size: 20px;
+        letter-spacing: 2px;
+        padding: 10px 20px;
+        cursor: pointer;
+    transition: all 2s;
+
+}
+.nav-control .row a:last-of-type{
+    margin-left: auto;
+    margin-right: 10px;
+}
+.nav-control .row span{
+    flex-grow: 1;
+    transition: all 2s;
+        transition-timing-function: linear;
+
+}
+.shirnk{
+    flex-grow: 0 !important;
+}
+
+.nav-control input[type="text"]{
+    
+
+    border: none;
+    background-color: var(--main-color-red);
+    color:white;
+    font-size: 18px;
+    letter-spacing: 2px;
+    
+    width: 0;
+    padding: 8px 0;
+    transition: all  2s;
+    transition-timing-function: linear;
+
+}
+.expand{
+    padding: 8px 15px !important;
+    flex-grow: 1;
+}
+.nav-control input[type="text"]:focus{
+    border: none;
+    outline:none;
+}
+
+.mobile-nav{
+    display: none;
+}
+/*-nav-->nav-control---> drop-down--------------------------------------------------------------------------*/
+.drop-down{
+    position: relative;
+ 
+}
+.drop-down:hover .drop-down-content{
+    display: block;
+}
+.drop-down-content{
+       z-index: 2 !important;
+    display: none;
+    position: absolute;
+    top:32px;
+    text-align: left;
+    width: 180px;
+    background-color:var(--main-color-red);
+    box-shadow: 2px 2px 5px var(--main-color-red);
+    transition: all 2s;
+}
+.drop-down-content a{
+    z-index: 1;
+    font-size: 14px;
+    display: block;
+    color: var(--main-color-blue) !important;
+    border-bottom: 0.5px solid var(--main-color-blue);
+    letter-spacing: 0;
+    transition: all 2s;
+
+}
+.drop-down-content a:last-of-type{
+    margin-right: 0 !important;
+}
+.drop-down-content a:hover{
+    background-color: var(--main-color-blue);
+    color: var(--main-color-red) !important;
+    border: 1px solid var(--main-color-red);
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor:pointer;
+}
+
+
+/*-Nav--------------------------------------------------------------------------------------*/
+/*-----nav-control-----------------------------------------------------------------------------*/
+.nav-other{
+    position: absolute;
+    width: 80px;
+    height: 270px;
+    background-color: var(--main-color-blue);
+    top: 50px;
+    left: 3%;
+    transform: translateX(3%);
+    transition: all 1s;  
+    
+    
+}
+.nav-other-shirnk{
+    height: 0 !important;
+    overflow: hidden;
+   
+
+}
+.nav-other .row{
+    margin-top: 80px;
+    flex-direction: column;
+    padding: 20px 0;
+}
+.nav-other a{
+    color: var(--main-color-red);
+    font-size: 25px;
+    padding: 10px 20px;
+    transition: all 2s;
+
+}
+.nav-other a:nth-of-type(1){
+    font-size: 30px;;
+}
+nav a:hover{
+    background-color: black;
+}
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------search output------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+.nav-search{
+    z-index: 1;
+    position: absolute;
+    top: 105px;
+    left: 20%;
+    transform: translateX(-10%);
+    background-color: white;
+    box-shadow: 2px 2px 15px var(--main-color-red);
+    width: 80%;
+    margin: auto;
+    padding: 10px 50px;
+}
+#desktop-search-output{
+    display: none;
+}
+.nav-search .row{
+    justify-content: center;
+}
+.nav-search .row:nth-of-type(2){
+    margin-top:50px;
+}
+.nav-search .row:nth-of-type(1) .col-5{
+    opacity: 0.7;
+}
+.nav-search .row:nth-of-type(1) .col-5:hover{
+    opacity: 1;
+}
+.nav-search .content{
+    text-align: center;
+}
+.nav-search .img-block{
+    max-width: 60%;
+    margin: 0 auto;
+    
+}
+.nav-search .name,
+.nav-search .price,
+.nav-search .style{
+    padding: 1px;
+    font-size: 14px;
+
+}
+.nav-search .name{
+    text-transform: capitalize;
+}
+.nav-search .style{
+    text-transform: uppercase;
+}
+
+.nav-search .price{
+    margin: 0;
+    text-align: right;
+    padding-right: 10px;
+}
+.nav-search .show{
+    cursor: pointer;
+    width: 100%;
+    transition: all 1s;
+}
+.nav-search .show:hover{
+    letter-spacing: 3px;
+    font-weight: bold;
+    width: 100%;
+    background-color: white;
+    text-decoration: underline;
+}
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------footer------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+footer{
+    margin-top: auto;
+    background-color: var(--main-color-blue);
+
+}
+
+footer .container{
+    background-color: rgba(0, 0, 0, 0.28);
+    margin: 0 2%;
+    padding: 10px;
+    color: var(--main-color-red);
+    margin: auto;
+}
+
+footer .content{
+    padding:  20px;
+    font-family: 
+}
+
+
+footer .row{
+    align-items: flex-start
+}
+
+
+footer h3{
+    font-family: 'Glass Antiqua', cursive !important;
+    letter-spacing: 3px;
+    font-size: 18px;
+    padding: 20px 0 5px;
+    
+}
+
+footer a
+{
+    color:gray;
+    font-size: 14px;
+    display: block;
+    padding: 2px;
+    text-decoration: none;
+    transition: all 2s ease;
+    cursor: pointer;
+}
+
+footer a:hover{
+    color: white;
+    letter-spacing: 2px;
+    text-decoration: underline;
+}
+
+footer p{
+    color: gray;
+    font-size: 16px;
+    width: 80%;
+    padding: 5px 0;
+}
+
+
+.newsletter{
+    display: flex;
+    padding: 10px 0
+}
+.newsletter input{
+    padding: 5px;
+    font-size: 16px;
+    flex-grow: 1;
+    margin-right: 10px;
+    background-color: var(--main-color-red);
+    border: none;
+
+}
+
+.newsletter input:focus{
+    outline: none;
+}
+
+.newsletter .button{
+    display: inline-block;
+    background-color: black;
+    color:white !important;
+}
+
+.newsletter .button:hover{
+    background-color: white;
+    color: black !important;
+}
+
+
+.social-links{
+    padding: 10px 0;
+    text-align: left;
+}
+
+.social-links i{
+    padding: 5px;
+    color: gray;
+    transition: all 1s ease;
+}
+
+.social-links i:hover{
+    transform: scale(1.5);
+    color: var(--main-color-red);
+}
+
+footer .copyright{
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(184, 177, 240, 0.28);
+    color: rgba(255, 255, 255, 0.42);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*Sneaker-block------------------------------------------------------------------------------------*/
+
+.product-row{
+    padding: 5px 0 40px;;
+    justify-content: flex-start;
+}
+
+.sneaker-block{
+    cursor: pointer;
+    background-color: white;
+    transition: border 5s linear;
+    margin: 25px 0;
+    
+
+}
+
+.sneaker-block .content{
+    padding: 25px 30px;
+    position: relative;
+}
+
+@keyframes block-border{
+    0%{border: 2px solid var(--main-color-red);}
+    50%{border: 2px solid var(--main-color-blue);}
+    100%{border: 2px solid var(--main-color-red);}
+}
+
+
+.sneaker-block:hover{
+    transform: scale(1.2);
+    border: 2px solid var(--main-color-blue);
+    animation-name: block-border;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    z-index: 2;
+    margin: 0;
+}
+.sneaker-block:hover  .content{
+    padding: 20px 25px;
+    margin: 15px;
+
+}
+@keyframes rotate-tag{
+    0%{transform: rotateY(0deg);}
+    2.63%{transform: rotateY(10deg);}
+    5.26%{transform: rotateY(20deg);}
+    7.89%{transform: rotateY(30deg);}
+    10.52%{transform: rotateY(40deg);}
+    13.52%{transform: rotateY(50deg);}
+    15.78%{transform: rotateY(60deg);}
+    18.41%{transform: rotateY(70deg);}
+    21.04%{transform: rotateY(80deg);}
+    23.87%{transform: rotateY(90deg);}
+    26.30%{transform: rotateY(100deg);}
+    28.93%{transform: rotateY(110deg);}
+    31.56%{transform: rotateY(120deg);}
+    34.19%{transform: rotateY(130deg);}
+    36.82%{transform: rotateY(140deg);}
+    39.45%{transform: rotateY(150deg);}
+    42.08%{transform: rotateY(160deg);}
+    44.71%{transform: rotateY(170deg);}
+    47.34%{transform: rotateY(180deg);}
+    49.97%{transform: rotateY(170deg);}
+    52.6%{transform: rotateY(160deg);}
+    55.23%{transform: rotateY(150deg);}
+    57.86%{transform: rotateY(140deg);}
+    60.49%{transform: rotateY(130deg);}
+    63.12%{transform: rotateY(120deg);}
+    65.75%{transform: rotateY(110deg);}
+    68.38%{transform: rotateY(100deg);}
+    71.01%{transform: rotateY(90deg);}
+    73.64%{transform: rotateY(80deg);}
+    76.27%{transform: rotateY(70deg);}
+    78.90%{transform: rotateY(60deg);}
+    81.53%{transform: rotateY(50deg);}
+    84.16%{transform: rotateY(40deg);}
+    86.79%{transform: rotateY(30deg);}
+    89.420%{transform: rotateY(20deg);}
+    94.68%{transform: rotateY(10deg);}
+    100%{transform: rotateY(0deg);}
+}
+
+.sneaker-block:hover .price-tag{
+    display: block;
+    animation-name: rotate-tag;
+    animation-duration: 5s;
+    animation-iteration-count: 2;
+}
+.sneaker-block .sale-type{
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: -5%;
+    transform: translate(-50%, 5%);
+}
+
+.sneaker-blog .product-block{
+    position: relative;
+}
+
+.sneaker-block .sneaker-pic{
+    margin-top: 40px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.sneaker-block .price-tag{
+    position: absolute; 
+    top: 75px;
+    right: -40px;
+    width: 180px;
+    z-index: 1;
+    display: none;
+}
+
+.sneaker-block .price{
+    width: 60px;
+    padding: 1px;
+    position: absolute;;
+    top:120px;
+    right: 50px;
+    font-size: 16px;
+}
+
+
+.sneaker-block .details-block{
+   position: absolute;
+    width: 100%;
+    top: 83%;
+}
+
+.sneaker-block .sneaker-details{
+    position: relative;
+    padding: 10px 0;
+    height: 75px;
+}
+
+.sneaker-block .brand-logo{
+    width: 50px;
+    padding: 5px;
+    border: 1px solid var(--main-color-blue);
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    left: 1%;    
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+
+.sneaker-block .brand-logo-details{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 0%;
+    padding: 10px 0;
+    background-color: var(--main-color-blue);
+    font-family: 'Glass Antiqua', cursive !important;
+
+    font-size: 20px !important;
+    font-weight: bold;
+    text-align: right;
+    color: var(--main-color-red);
+    
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translate(5%, -50%);
+    transition: width 2s ease;
+}
+
+.sneaker-block .brand-logo-details:nth-of-type(2){
+      width: 80% !important;
+    
+    padding: 10px 10px 10px 25px;
+}
+.sneaker-block .brand-logo-details:nth-of-type(3){
+    padding: 10px ;
+    background-color: var(--main-color-red);
+    color: var(--main-color-blue);
+}
+.sneaker-block:hover .brand-logo-details:nth-of-type(2){
+    width: 0% !important;
+    padding: 10px 0;
+}
+
+
+.sneaker-block:hover .brand-logo-details{
+    width: 80%;
+    padding: 10px 10px 10px 20px;
+}
+
+.sneaker-block .avialable-colors{
+    position: absolute;
+    top:64%;
+    display: none;
+}
+
+.sneaker-block:hover .avialable-colors{
+    display: block;
+}
+
+.sneaker-block .slideshow{
+    position: relative;
+    overflow: hidden;
+    background-size: contain;
+    background-repeat: repeat-x;
+    transform: translate3d(0,0,0);
+}
+
+.sneaker-block:hover .colors{
+     animation: slide-left 8s linear infinite;
+}
+
+.sneaker-block .colors{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    background-size: contain;
+    transform: translate3d(0,0,0);
+}
+@keyframes slide-left{
+    100%{transform: translateX(-134.32%);}   
+}
+
+.sneaker-block .avialable-colors img.sliding-out{
+    animation-name: slide-left;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+
+.sneaker-block .colors img{
+    width: 25%;
+    height: 65px;
+    border: 2px solid var(--main-color-red);
+    margin: 2px 5px;
+}
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------Index.html--------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*Slide-show------------------------------------------------------------------------------------*/
+
+#slide-show .container{
+    position: relative;
+    
+}
+
+.slide-container{
+    position: relative;
+}
+
+.bullet-points{
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.controls{
+    position: absolute;
+    z-index: 1;
+    right: 5%;
+    display: inline;
+}
+.control-box{
+    margin: 2px;
+    display: inline-block;
+    border: 2px solid gray;
+    border-radius: 50%;
+    width: 25px;
+    text-align: center;
+    color: gray;
+}
+
+
+
+.bullet{
+    display: inline-block;
+    border: 2px solid var(--main-color-red);
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    margin: 5px 2px;
+    position: relative;
+}
+.filled-bullet{
+    background-color: var(--main-color-blue);
+}
+
+
+
+
+.slide{
+  position: relative;
+}
+
+.featured{
+    position: relative;
+    padding: 10px 50px 10px 0;
+    text-align: right;
+    text-transform: uppercase;
+    border-bottom: 1px solid black;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    box-shadow: 2px 2px 5px var(--main-color-blue);
+    background-color: var(--main-color-red);
+    color: var(--main-color-blue);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    
+    width: 25%;
+    /*---width can not be changed ---*/
+}
+
+.featured i{
+    position: absolute;
+    font-size: 35px;
+    padding: 0 10px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.product-row .row .col-5 {
+    width: 10%;
+}
+
+
+.product-row .row .col-5 .content{
+    text-align: center;
+}
+
+.product-row .row .col-5:nth-of-type(1) img{
+    transform: rotate(-90deg);
+}
+.product-row .row .col-5:last-of-type img{
+    transform: rotate(90deg);
+}
+
+
+.product-row .row .row{
+    flex-grow: 1;
+    width: 80%;
+    padding: 20px;
+    height: 350px;
+}
+
+.product-row .row .row .content{
+    display: flex;
+    padding: 15px;
+    align-items: center;
+}
+.product-row .row .row .content:hover{
+    background-color: whitesmoke;
+    height: 250px;
+
+
+}
+
+.featured-detail-block{
+    display: none;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+
+    
+}
+.featured-img-block{
+    display: block;
+
+}
+
+.product-row .row .row .content:hover .featured-detail-block{
+    display: flex;
+}
+.product-row .row .row .content:hover .featured-img-block{
+    display: none;
+}
+
+
+.featured-product-details{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    transition: all 2s;
+
+
+
+}
+
+.featured-product-details .row{
+    width: 100% !important;
+    padding: 0 !important;
+    
+
+
+    
+}
+.featured-product-details .row:nth-of-type(1) {
+    background-color: var(--main-color-blue);
+    color: var(--main-color-red);
+    flex-direction: column;
+
+}
+.featured-product-details .row:nth-of-type(2) {
+    justify-content: flex-start;
+
+}
+
+.featured-product-details .row:nth-of-type(2) > div {
+ border-bottom: 1px solid black;
+    width:100%;
+    text-align: left;
+    font-size: 14px;
+    padding: 0 15px;
+
+}
+
+.featured-product-details .row:nth-of-type(3) {
+    justify-content: center;
+
+}
+.featured-product-details .row:nth-of-type(3) div {
+    width: 25%;
+    
+    text-decoration: underline;
+}
+
+.featured-product-details .row img{
+    width: 25%;
+    padding: 0 5px;
+    transition: all 2s;
+    
+
+}
+
+
+.style{
+    text-transform: uppercase;
+    padding: 0 10px;
+    font-size: 18px;
+    width: 60%;
+    overflow: hidden;
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    
+    
+}
+
+.price::before{
+    content: "$ ";
+}
+
+.price{
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-right: 10px;
+    font-weight: bold;
+    background-color: var(--main-color-red);
+    color: var(--main-color-blue);
+}
+
+.featured-product-details .price{
+    width: 100%;
+}
+
+.show{
+    width: 100%;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: all 2s;
+    cursor: pointer;
+}
+
+.show:hover{
+    text-decoration: underline;
+    letter-spacing: 2px;
+    background-color: var(--main-color-red);
+    color: var(--main-color-blue);
+}
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*New Arrival banner------------------------------------------------------------------------------------*/
+
+@keyframes NewArrival{
+
+    0% {background-image: url(image/banner/new-arrival-1.jpg);}
+    5% {background-image: url(image/banner/new-arrival-2.jpg);}
+    10% {background-image: url(image/banner/new-arrival-3.jpg);}
+    15% {background-image: url(image/banner/new-arrival-4.jpg);}
+    20% {background-image: url(image/banner/new-arrival-5.jpg);}
+    25% {background-image: url(image/banner/new-arrival-6.jpg);}
+    30% {background-image: url(image/banner/new-arrival-7.jpg);}
+    35% {background-image: url(image/banner/new-arrival-8.jpg);}
+    40% {background-image: url(image/banner/new-arrival-9.jpg);}
+    45% {background-image: url(image/banner/new-arrival-10.jpg);}
+    50% {background-image: url(image/banner/new-arrival-11.jpg);}
+    55% {background-image: url(image/banner/new-arrival-12.jpg);}
+    60% {background-image: url(image/banner/new-arrival-13.jpg);}
+    65% {background-image: url(image/banner/new-arrival-14.jpg);}
+    70% {background-image: url(image/banner/new-arrival-15.jpg);}
+    75% {background-image: url(image/banner/new-arrival-16.jpg);}
+    80% {background-image: url(image/banner/new-arrival-17.jpg);}
+    85% {background-image: url(image/banner/new-arrival-18.jpg);}
+    88% {background-image: url(image/banner/new-arrival-19.jpg);}
+    90% {background-image: url(image/banner/new-arrival-20.jpg);}
+    92% {background-image: url(image/banner/new-arrival-21.jpg);}
+    95% {background-image: url(image/banner/new-arrival-22.jpg);}
+    100% {background-image: url(image/banner/new-arrival-23.jpg);}
+    
+}
+
+#new-arrival .banner{
+    
+    animation-name: NewArrival;
+    width: 100%;
+    height: 300px;
+    background-size:contain;
+    background-position: center;
+    animation-duration: 10s;
+    animation-iteration-count: infinite
+}
+
+
+
+
+
+#new-arrival {
+    margin: 10px 0;
+
+}
+
+@keyframes onsale-animation{
+    
+            0% {background-image: url(image/banner/ONSALE%20BANNER%20EDIT_3.jpg);}
+            50% {background-image: url(image/banner/ONSALE%20BANNER%20EDIT_4.jpg);}
+            100% {background-image: url(image/banner/ONSALE%20BANNER%20EDIT_3.jpg);}
+
+    
+}
+
+#on-sale .banner{
+        animation-name:  onsale-animation;
+
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transition: background-image 2s ease-out;
+}
+
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*----------------------------   END: Index.html   -----------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------Sneaker Collection----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+.sneaker_page .banner{
+    background-image: url(image/banner/colourfull%20new%20arrival_edited.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    width: 100%;
+    position: relative;
+}
+
+#banner-text{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 120px;
+    width: 100%;
+    text-align: center;
+    font-weight: bolder;
+    transform: translate( -50%, -50%);
+    animation-name: text-animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    transition: color 2s ease;
+    
+}
+
+@keyframes text-animation{
+    0%{color: black;}
+    20%{color: #4ef38a;}
+    40%{color: #8b0099;}
+    60%{color: #fbc702;}
+    80%{color: #f40445;}
+    100%{color: #fb8d00;}
+}
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*-----------Paging------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+.paging{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paging i{
+    font-size: 25px;
+    padding: 10px 15px;
+    border: 1px solid  black;
+    background-color: var(--main-color-blue);
+    color: var(--main-color-red);
+    transition: all 2s;
+    cursor: pointer;
+    display: block;
+    margin: 2px;
+}
+
+.paging i:hover{
+    background-color: var(--main-color-red);
+    color: var(--main-color-blue);
+}
+
+.paging .page{
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 25px;
+    border: 1px solid black;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.paging .selected,
+.paging .page:hover{
+    background-color: black;
+    color: white;
+}
+
+.paging .disabled{
+    cursor: default;
+}
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------END: Sneaker Collection-----------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------      Sneaker     ----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+.sneaker-info{
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+.sneaker-info .col-2:nth-of-type(1){
+    width: 63%;
+}
+
+.sneaker-info .col-2:nth-of-type(2){
+    width: 35%;
+    background-color: var(--main-color-blue);
+    color: var(--main-color-red);
+
+}
+
+.sneaker-slider{
+    justify-content: center;
+    text-align: center;
+}
+
+
+.sneaker-slider .col-3:nth-child(1),
+.sneaker-slider .col-3:nth-child(3){
+    width: 10%;
+}
+
+.sneaker-slider .col-3 i{
+    padding: 10px;
+    font-size: 30px;
+    color: var(--main-color-blue);
+    cursor: pointer;
+    transition: all 2s;
+}
+.sneaker-slider .col-3 i:hover{
+    transform: scale(1.2);
+    color: var(--main-color-red);
+    background-color: var(--main-color-blue);
+}
+.sneaker-slider .col-3:nth-child(2){
+    width: 80%;
+    padding: 20px 0;
+    position: relative;
+    
+}
+
+.sneaker-slider .col-3:nth-child(2) div{
+    position: absolute;
+    color: blue;
+
+    padding: 5px;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    justify-content: space-between;
+
+    display: flex;
+    transition: all 2s ease;
+}
+.sneaker-slider .col-3:nth-child(2):hover div i{
+    display: flex;
+}
+
+
+i.saved{
+    display: flex !important;
+    color: var(--main-color-red) !important;
+}
+
+
+.sneaker-slider .col-3:nth-child(2) div i{
+    display: none;
+    padding: 10px;
+    font-size: 30px !important;
+    margin: 10px;
+}
+.sneaker-images{
+    padding: 20px;
+    justify-content:flex-start;
+    border: 2px solid var(--main-color-blue);
+
+}
+.sneaker-images >img{
+    width: 18%;
+    margin: 1%;
+    padding: 20px;
+    border: 1px solid var(--main-color-blue);
+    transition: all 1s ease;
+}
+
+
+
+/*
+.sneaker-images > img:nth-last-child(2),
+.sneaker-images > img:nth-last-child(3),
+.sneaker-images > img:nth-last-child(4),
+.sneaker-images > img:nth-last-child(5)
+{
+    border-bottom: none;
+}
+.sneaker-images > img:last-of-type{
+    border-right: none;
+    border-bottom: none;
+}
+*/
+.sneaker-images >img:hover{
+    background-color: var(--main-color-red);
+    z-index: 2;
+}
+
+.sneaker-images img.selected{
+    border: 2px solid var(--main-color-red);
+    transform: scale(1.2);
+    z-index: 1;
+    background-color: white;
+}
+
+
+
+.sneaker-description::before{
+    content: "Product Details :";
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    color: var(--main-color-blue);
+    text-decoration: underline;
+}
+.sneaker-description{
+    padding: 20px 0;
+    text-align: justify;
+    word-spacing: 1px;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+
+.sneaker-features::before{
+    content: "Product features :";
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    color: var(--main-color-blue);
+    text-decoration: underline;
+}
+
+.sneaker-features ul{
+    padding: 5px 30px;
+     text-align: justify;
+    word-spacing: 1px;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+
+.sneaker-price{
+    justify-content: flex-end;
+}
+
+.sneaker-price .price{
+    font-size: 35px;
+    margin: 20px;
+}
+
+.sneaker-name,
+.sneaker-style,
+.sneaker-gender,
+.sneaker-color,
+.sneaker-avialable-colors,
+.sneaker-shop,
+.sneaker-size,
+.sneaker-brand-details{
+    margin: 20px;
+    border-bottom: 1px solid var(--main-color-red)
+}
+.sneaker-info .label::after{
+    content: ": ";
+}
+.sneaker-info .label{
+    
+    display: block;
+    font-size: 20px;
+    text-transform: uppercase;
+    width: 40%;
+
+}
+
+.sneaker-info .colors,
+.sneaker-info .size{
+    width: 100%;
+    padding: 10px 0 10px 30px;
+    justify-content: flex-start;
+}
+.sneaker-info .colors img,
+.sneaker-info .size-no{
+    width: 19%;
+    margin: 2% 1.5%;
+    border: 1px solid black;
+}
+
+.sneaker-info .colors img{
+    cursor: pointer;
+    padding: 5px;
+    transition: all 2s ease;
+}
+
+.sneaker-info .colors img:hover{
+    background-color: var(--main-color-red);
+    transform: scale(2.5);
+    z-index: 2;
+}
+
+
+.sneaker-info .size-no{
+    padding: 15px;
+    text-align: center;
+    background-color: white;
+    color: var(--main-color-blue);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s linear;
+}
+
+.sneaker-info .size-no:hover,
+.sneaker-info .size-selected,
+.sneaker-info .color-selected{
+    background-color:var(--main-color-red);
+    color: var(--main-color-blue);
+    transform: scale(1.5);
+}
+
+.sneaker-info .not-avialable{
+    opacity: 0.2;
+    cursor: default;
+}
+.sneaker-info .not-avialable:hover{
+    opacity: 0.2;
+    cursor: default;
+        transform: scale(1);
+    background-color: white;
+
+}
+.size-guide{
+    text-transform: uppercase;
+    font-size: 14px;
+    color:white;
+    cursor: pointer;
+    transition: all 2s ease;
+}
+.size-guide:hover{
+    text-decoration: underline;
+    letter-spacing: 3px;
+    color:var(--main-color-red);
+}
+.shopping-cart{
+    padding: 10px;
+    margin: 30px 0 40px;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    color:var(--main-color-blue);
+    font-family: 'Glass Antiqua', cursive !important;
+    font-weight: bold;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 2s ease;
+}
+.shopping-cart:hover{
+    background-color: var(--main-color-red);
+    letter-spacing: 5px;
+}
+
+.sneaker-brand-details{
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.sneaker-brand-details .brand-logo{
+    text-align: center;
+    width: 35%;
+}
+
+.sneaker-brand-details .brand-description{
+    text-align: justify;
+    padding: 20px;
+    font-size: 14px;
+}
+.suggested-item::before{
+    content: "Suggested item for you :";
+
+}
+.recent-visited::before{
+    content: "Recent visited item :"
+}
+.suggested-item::before,
+.recent-visited::before{
+    font-size: 30px;
+    border-bottom: 2px solid var(--main-color-red);
+    display: block;
+    color: var(--main-color-red);
+}
+
+.suggested-item,
+.recent-visited{
+    border: 1px solid var(--main-color-blue);
+    display: block;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.recent-visited .col-3:nth-of-type(1),
+.recent-visited .col-3:nth-of-type(3){
+    width: 10%;
+    text-align: center;
+}
+
+.recent-visited .col-3:nth-of-type(1) i,
+.recent-visited .col-3:nth-of-type(3) i{
+    padding: 20px;
+    transition: all 2s ease;
+    
+}
+
+.recent-visited .col-3:nth-of-type(1) i:hover,
+.recent-visited .col-3:nth-of-type(3) i:hover{
+    background-color: var(--main-color-blue);
+    color: var(--main-color-red);
+    
+}
+.recent-visited .col-3:nth-of-type(2){
+    width: 80%;
+    text-align: center;
+}
+
+.recent-visited .col-3:nth-of-type(2) .row{
+    width: 100%;
+}
+
+#recent-visited-items{
+    justify-content: flex-start;
+}
+#recent-visited-items .featured-detail-block{
+    height: 280px;
+    
+
+}
+#recent-visited-items .featured-detail-block .row{
+
+    overflow: hidden;
+
+}
+
+#recent-visited-items .featured-detail-block .row:nth-of-type(2){
+    height: 80px;
+    padding: 10px !important;
+}
+#recent-visited-items .featured-detail-block .row:nth-of-type(3){
+    height: 120px;
+    padding: 10px !important;
+    
+}
+
+#recent-visited-items .featured-product-details .style{
+    width: 95%;
+    text-align: center;
+    
+}
+
+
+#recent-visited-items .featured-product-details .price{
+    width: 100%;
+    margin: auto;
+}
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*--------------------------      full image view    ----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+#full-view{
+    position:absolute;
+    z-index: 5;
+    top:0%;
+    background-color: white !important;
+    justify-content: center;
+
+}
+
+#full-view img{
+    width: 100vw;
+    height: 100vh;
+    padding: 50px;
+}
+
+#close-full-view{
+    position: fixed;
+    z-index: 6;
+    top: 5%;
+    right: 10%;
+}
+
+#close-full-view i{
+    font-size: 35px;
+    padding: 10px;
+    transition: all 2s ease;
+}
+
+#close-full-view i:hover{
+    background-color: black;
+    color: red;
+}
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*--------------------------      Message    ----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+.message{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.50);
+ 
+    
+    z-index: 5;
+}
+
+.message-box{
+    
+    position: relative;
+    width: 800px;
+    top: 20%;
+    left: 30%;
+    transform: translate(-30%, -20%);
+
+}
+
+
+
+.message-box img{
+    width: 500px;
+
+    z-index: 1;
+    position: absolute;
+}
+
+.message-box-details{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--main-color-blue);
+    width: 700px;
+    height: 300px;
+
+    top:35%;
+    left: 25%;
+    transform: translate(25%, 35%);
+    box-shadow: 2px 2px  15px white;
+    animation-name: expand_width;
+    animation-duration: 2s; 
+    transition: all 2s ease;    
+}
+
+
+@keyframes expand_width{
+    0%{width: 0;}
+    100%{width:700px;}
+}
+@keyframes shirnk_width{
+    100%{width: 0;}
+}
+
+
+.close-message{
+    margin: 20px 20px 10px 100px;
+    font-size: 35px;
+    display: none;
+
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 10px 0;
+    background-color: var(--main-color-red);
+
+
+}
+
+.message-heading{
+    flex-grow: 1;
+    margin-left: 20px;
+    color: var(--main-color-blue);
+    font-family: 'Glass Antiqua', cursive !important;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size: 25px;
+
+}
+
+.close-message i{
+    color: white;
+    cursor: pointer;
+    transition: all 2s ease;
+}
+
+.close-message i:hover{
+    color: var(--main-color-blue);
+}
+
+.text-message{
+    margin: 10px 20px 10px 100px;
+    padding: 10px;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    flex-grow: 1;
+    display: none;
+    align-items: center;
+    background-color: rgba(240, 240, 240, 0.13);
+}
+
+.message-box-details div:nth-of-type(3){
+    padding: 10px 20px 20px 100px;
+    width: 100%;
+display: none;
+justify-content: center;    
+}
+.message-box-details button{
+    font-family: 'Glass Antiqua', cursive !important;
+    background-color: var(--main-color-red);
+    color: var(--main-color-blue);
+    width: 140px;
+    padding: 5px 10px;
+    font-size: 25px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 2s ease;
+}
+
+.message-box-details button:hover{
+    background-color: white;
+}
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------      END:Sneaker     ----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------       saved item          -------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+.saved-item-page .banner{
+    background-image: url(image/banner/savedItem.png);
+       background-size: cover;
+    background-position: center;
+    height: 600px;
+    width: 100%;
+    position: relative;
+    animation-name: background-animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+
+
+@keyframes background-animation{
+    0%{background-color: var(--main-color-red);}
+    50%{background-color: var(--main-color-blue);}
+
+    100%{background-color: var(--main-color-red);}
+}
+
+.warning-text{
+    min-height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    text-decoration: underline;
+    color: var(--main-color-red);
+}
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------   END: saved item       ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------       Shopping-cart     ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+.cart{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.cart-items{
+    width: 70%;
+}
+.item{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    margin: 30px 0
+}
+
+.item img{
+    width: 25%;
+    height: 200px;
+    border: 2px solid var(--main-color-blue);
+    
+}
+.item-details{
+    flex-grow: 1;
+    height: 150px;
+    background-color: var(--main-color-red);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    color: var(--main-color-blue);
+    font-weight: bold;
+    border: 2px solid var(--main-color-blue);
+    position: relative;
+}
+
+.item-details .delete-item{
+    position: absolute;
+    top:5px;
+    right: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 2s ease;
+}
+
+.item-details .delete-item:hover,
+.item-details .column .row i:hover{
+  color: black;
+}
+
+.item-details .column .label{
+    width: 70px;
+    
+    
+}
+.item-details .column .row{
+    justify-content: flex-start;
+}
+
+.item-details .data::before{
+    content: ": "
+}
+.item-details .data{
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 80px;
+    overflow: hidden;
+}
+
+.item-details .view-product{
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    background-color: var(--main-color-blue);
+    color: var(--main-color-red);
+    margin: 5px 0;
+    transition: all 2s ease;
+}
+
+.item-details .view-product:hover{
+    text-decoration: underline;
+    letter-spacing: 2px;
+    background-color: black;
+}
+.cart-item-quantity{
+    margin: 5px 10px;
+    padding: 2px 6px;
+    border: 2px solid var(--main-color-blue);
+}
+
+.item-details .column .row i{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.cart-details{
+    position: fixed;
+    width: 20%;
+    left: 65%;
+    min-height: 50vh;
+    padding: 10px;
+    background-color: var(--main-color-blue);
+    color: var(--main-color-red);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+
+}
+.cart-details .row{
+    border-bottom: 2px solid var(--main-color-red);
+    margin: 10px 0;
+}
+
+.cart-details .row:nth-child(4){
+    border-bottom: none;
+
+}
+
+.cart-details .label,
+.cart-details .data{
+    font-size: 20px;
+    padding: 10px 0
+}
+.cart-details .label::after{
+    content: ": "
+}
+
+.cart-details .data{
+    padding-right:  20px !important;
+    width: 50%;
+    text-align: right;
+}
+
+.cart-details .row:nth-child(3){
+    justify-content: center;
+    padding-bottom: 20px
+}
+.cart-details .row:nth-child(3) .label{
+    width: 100%;
+}
+.cart-details .price{
+    width: 50%;
+    text-align: center;
+    font-size: 30px;
+    padding: 30px;
+}
+
+.cart-details .row:nth-child(4){
+    justify-content: center;
+}
+
+.checkout{
+    text-align: center;
+    background-color: black;
+    padding: 20px 80px;
+    color: white;
+    font-size: 20px;
+        text-transform: uppercase;
+
+    cursor: pointer;
+    transition: all 1s ease;
+}
+.checkout:hover{
+    text-decoration: underline;
+    letter-spacing: 2px;
+    color: black;
+    background-color: white;
+    
+}
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------   END: Shopping-cart    ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------           Store         ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+.store{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.shop{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
+    border: 2px solid var(--main-color-blue);
+}
+
+.address {
+    width: 30%;
+    background-color: var(--main-color-blue);
+    margin: 10px;
+    padding: 20px;
+    color: var(--main-color-red);
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.store .selected{
+    opacity: 1;
+}
+.store .selected,
+.address:hover{
+    opacity: 1;
+    background-color: var(--main-color-red);
+    color: var(--main-color-blue);
+
+}
+
+.address .name{
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    
+    font-size: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-decoration: underline;
+    padding-bottom: 10px;
+}
+
+.street,
+.shopNumber{
+    padding: 2px 0;
+    letter-spacing: 0.5px
+}
+
+.address .phone{
+    display: flex;
+    margin-top: 10px;
+    padding: 10px;;
+    align-items: center;
+    border: 1px solid;
+    justify-content: center;
+}
+
+.address .phone i{
+    padding-right: 10px;
+}
+
+
+
+.map{
+    width: 100%;
+    padding: 10px;
+    height: 800px;
+    margin: 10px 0;
+}
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------      END: Store         ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------           about         ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+.about-page .about{
+    background-image: url(image/banner/snaker-about.jpg);
+    background-size:cover;
+
+    margin-top: 25px;
+    
+}
+
+.about .content{
+    z-index: 1;
+    background-color: rgba(222, 100, 100, 0.73);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .content img{
+    max-width: 30%;
+    margin: auto;
+}
+
+.about-us{
+    margin-bottom: 40px;
+    padding: 20px;
+    width: 60%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color:  rgba(11, 63, 89, 0.64);
+    color:white;
+    
+}
+
+.about-us h2{
+    text-align: center;
+    padding: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid 
+}
+
+.about-us div{
+    padding: 15px 0;
+}
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------      END: about         ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------           job           ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+.career img{
+    margin-top: 20px;
+}
+
+.job{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.job h2{
+    padding: 10px;
+    border-bottom: 1px solid;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.job h4{
+    letter-spacing: 1px;
+    padding: 40px 0 10px;
+    text-align: center;
+}
+
+.job div{
+    padding: 10px;
+}
+
+.job b{
+    text-decoration: underline;
+}
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------        END: job         ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------         Terms           ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+.terms_condition{
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}
+.terms_condition h2{
+    padding: 20px;
+    border-bottom: 1px solid;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.terms_condition div{
+    padding: 80px;
+    text-align: center;
+    color: var(--main-color-red);
+    font-size: 25px;
+}
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------        END: Terms         ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+
+
+
+@media only screen and (max-width:1500px) and (min-width:992px) {
+
+    
+    #new-arrival .banner{
+        height: 180px;
+    }
+
+    #on-sale .banner{
+        height: 250px;
+        background-position: center;
+    }
+    
+        
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*Sneaker-block------------------------------------------------------------------------------------*/
+
+    .sneaker-block .content{
+    padding: 15px ;
+    margin: 5px;
+
+    }
+    .sneaker-block:hover .content{
+    padding: 15px ;
+    margin: 5px;
+    
+    }
+
+    .sneaker-block .sneaker-pic{
+        margin-top: 0;
+        height: 18vw;
+    }  
+    .sneaker-block:hover .sneaker-pic{
+        margin-top: 50px;
+        height: 18vw;
+    } 
+    
+    
+    .sneaker-block:hover .avialable-colors{
+    display: block;
+    }
+    
+    .sneaker-block .colors img{
+        width: 25%;
+        height: 3.5vw;
+        border: 2px solid var(--main-color-red);
+        margin: 2px 5px;
+    }
+    
+    .sneaker-block .price-tag{
+        position: absolute; 
+        top: 30px;
+        right: -35px;
+        width: 12vw;
+        z-index: 1;
+        display: none;
+    }
+    
+    .sneaker-block .price{
+        width: 50px;
+        padding: 1px;
+        position: absolute;;
+        top:7.5vw;
+        right: 3.1vw;
+        font-size: 0.9vw;
+    }
+    
+    
+    
+    .sneaker-block .details-block{
+        width: 100%;
+        top: 82%;
+        left: -2px;
+    }
+
+    .sneaker-block .sneaker-details{
+        padding: 4px 0;
+        height: 75px;
+    }
+    
+    
+    .sneaker-block .brand-logo{
+        width: 40px;
+        padding: 3px;
+    }
+
+
+
+    .sneaker-block .brand-logo-details{
+        font-size: 16px !important;
+        left: 5%;
+        top: 36%;
+    }
+    
+    
+
+    .sneaker-block .brand-logo-details:nth-of-type(2){
+          width: 92% !important;
+
+        padding: 10px;
+    }
+    .sneaker-block .brand-logo-details:nth-of-type(3){
+        padding: 10px ;
+        background-color: var(--main-color-red);
+        color: var(--main-color-blue);
+    }
+    .sneaker-block:hover .brand-logo-details:nth-of-type(2){
+        width: 0% !important;
+        padding: 10px 0;
+    }
+
+
+    .sneaker-block:hover .brand-logo-details{
+        width: 92%;
+        padding: 10px 10px 10px 20px;
+    }
+    
+    
+    
+    
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------       Shopping-cart     ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+    .cart{
+        flex-direction: column-reverse;
+    }
+    
+    .item{
+ 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    }
+
+    
+    .item-details{
+        width: 100%;
+    }
+    
+    .item-details .column .label{
+        width: auto;
+        font-size: 14px;
+    }
+    
+    .item-details .data{
+        font-size: 14px;
+        width: auto;
+    }
+    
+    .item img{
+       width: 40% 
+    }
+    
+    
+    
+    .cart-details{
+        position: fixed;
+        top:15%;
+    }
+    
+    
+    .cart-details .label,
+.cart-details .data{
+    font-size: 16px;
+    padding: 8px 0
+}
+    
+  .cart-details .data{
+    padding-right:  20px !important;
+    width: auto;
+    text-align: right;
+}  
+    
+    
+  .cart-details .price{
+    width: 50%;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+}  
+    
+    
+    .checkout{
+    text-align: center;
+    background-color: black;
+    padding: 10px 30px;
+    color: white;
+    font-size: 18px;
+        text-transform: uppercase;
+
+    cursor: pointer;
+    transition: all 1s ease;
+}
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:991px) and (min-width:769px) {
+    
+    
+    
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------Heading/button------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+
+.button{
+ font-size: 16px;
+}
+
+    
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------Layout------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+    section .container{
+        padding: 0 90px 50px;
+
+    }
+    
+    .col-4{
+        width: 33.33%;
+    }
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------Navigation------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+nav{height: 20px;}
+    
+.nav-logo{
+
+    width: 100px;
+    height: 100px;
+} 
+  
+.nav-control{
+    height: 50px;
+    margin:  0 2% 0 3%;
+    top:40%;
+    transform: translateY(40%);
+
+}
+    
+.nav-control input[type="text"]{
+    
+
+font-size: 16px;
+
+}
+ 
+.nav-control a{
+ 
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    
+
+}   
+ 
+.nav-other{
+
+    width: 55px;
+    height: 165px;
+       
+    
+}   
+    
+    .nav-other .row{
+    margin-top: 30px;
+}
+ 
+    
+.nav-other a{
+    font-size: 20px;
+    padding: 5px 10px;
+
+}
+
+.nav-other a:nth-of-type(1){
+    font-size: 25px;;
+}    
+  
+/*---------------------------------------------------------------------*/ 
+/*----------------------- search output ----------------------------------------------*/ 
+/*---------------------------------------------------------------------*/ 
+    
+    .nav-search{
+        top:75px
+    }
+    .nav-search .show{
+        font-size: 16px;
+    }
+    
+    
+  
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------Index.html--------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/ 
+    
+    
+/*-------------------------------------------------------------------------*/
+/*-----------------Slide show--------------------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+    .bullet-points{
+
+        top: 40%;
+        transform: translate(-50%, -40%);
+    }    
+    
+    .bullet{
+        width: 10px;
+        height: 10px;
+    }
+    .controls{
+        right: 5%;
+        top: 40%;
+        transform: translate(-5%, -40%);
+    
+    }
+    
+    .control-box i{
+        font-size: 14px;
+    }
+    
+    .featured {
+        font-size: 14px;
+        padding: 10px 30px 10px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+    }
+    
+    .featured i{
+        font-size: 25px;
+        padding: 05px;
+    }
+    
+    .slide-container{
+        width: 100%;
+    }
+    
+    .product-row .row:nth-of-type(2){
+        flex-direction: column;
+
+    }
+    
+    .product-row .row .col-5{
+        width: 100%;
+        background-color: var(--main-color-blue);
+    }
+    
+    .product-row .row .col-5:nth-of-type(1){
+        margin: 10px 0;
+    }
+    .product-row .row .col-5:nth-of-type(1) img{
+        
+        transform: rotate(0deg);
+        width: 100px;
+    }
+    .product-row .row .col-5:last-of-type img{
+        transform: rotate(0deg);
+                width: 100px;
+
+    }
+
+    
+    .product-row .row .row{
+        width: 100%;
+        align-items: center;
+        
+    }      
+    .product-row .row .row .content{
+        padding: 10px;
+    }   
+    
+    #new-arrival .banner{
+        height: 180px;
+    }
+
+    #on-sale .banner{
+        height: 250px;
+        background-position: center;
+    }
+    
+    
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*Sneaker-block------------------------------------------------------------------------------------*/
+
+    .sneaker-block .content{
+    padding: 15px ;
+                margin: 5px;
+
+    }
+    .sneaker-block:hover .content{
+    padding: 15px 20px;
+    display: flex;
+    height: 250px;
+    
+    }
+
+    .sneaker-block .sneaker-pic{
+        height:210px;
+    }  
+    .sneaker-block:hover .sneaker-pic{
+        margin-top: 50px;
+    } 
+    
+    
+    .sneaker-block:hover .avialable-colors{
+    display: none;
+    }
+    
+    .sneaker-block .price-tag{
+        position: absolute; 
+        top: 30px;
+        right: -35px;
+        width: 135px;
+        z-index: 1;
+        display: none;
+    }
+    
+    .sneaker-block .price{
+        width: 50px;
+        padding: 1px;
+        position: absolute;;
+        top:80px;
+        right: 31px;
+        font-size: 12px;
+    }
+    
+    
+    
+    .sneaker-block .details-block{
+        width: 100%;
+        top: 78%;
+        left: -15px;
+    }
+
+    .sneaker-block .sneaker-details{
+        padding: 4px 0;
+        height: 75px;
+    }
+    
+    
+    .sneaker-block .brand-logo{
+        width: 40px;
+        padding: 3px;
+    }
+
+
+
+    .sneaker-block .brand-logo-details{
+        font-size: 16px !important;
+        left: 5%;
+        top: 36%;
+    }
+    
+    
+
+    .sneaker-block .brand-logo-details:nth-of-type(2){
+          width: 92% !important;
+
+        padding: 10px;
+    }
+    .sneaker-block .brand-logo-details:nth-of-type(3){
+        padding: 10px ;
+        background-color: var(--main-color-red);
+        color: var(--main-color-blue);
+    }
+    .sneaker-block:hover .brand-logo-details:nth-of-type(2){
+        width: 0% !important;
+        padding: 10px 0;
+    }
+
+
+    .sneaker-block:hover .brand-logo-details{
+        width: 92%;
+        padding: 10px 10px 10px 20px;
+    }
+    
+    
+    
+    
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------footer------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+    footer .row{
+        justify-content: space-between;
+    }
+    
+    footer  .col-2{
+        width: 100%;
+    }
+    
+    footer .col-3,
+    footer .col-1{
+        padding: 10px;
+    }
+    
+    
+    
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------Sneaker Collection----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+.sneaker_page .banner{
+    height: 300px;
+
+}
+
+#banner-text{
+    font-size: 40px; 
+}
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*-----------Paging------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+.paging i{
+    font-size: 20px;
+}
+
+
+.paging .page{
+    font-size: 20px;
+}
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------END: Sneaker Collection-----------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------      Sneaker     ----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+.sneaker-info .col-2:nth-of-type(1){
+    width: 58%;
+}
+
+.sneaker-info .col-2:nth-of-type(2){
+    width: 40%;
+    background-color: var(--main-color-blue);
+    color: var(--main-color-red);
+
+}
+
+
+
+
+.sneaker-slider .col-3 i{
+    font-size: 20px;
+
+}
+
+
+
+
+
+
+
+.sneaker-slider .col-3:nth-child(2) div i{
+    font-size: 20px !important;
+}
+.sneaker-images{
+    padding: 5px;
+}
+.sneaker-images >img{
+    margin: 1%;
+    padding: 5px;
+}
+
+
+
+.sneaker-description::before{
+    font-size: 18px;
+}
+.sneaker-description{
+    padding: 10px 0;
+    word-spacing: 0;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+
+.sneaker-features::before{
+    font-size: 18px;
+}
+
+.sneaker-features ul{
+    padding: 5px 20px;
+     text-align: justify;
+    word-spacing: 1px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+
+.sneaker-price{
+    justify-content: center;
+}
+
+.sneaker-price .price{
+    font-size: 20px;
+    margin: 10px;
+}
+
+.sneaker-name,
+.sneaker-style,
+.sneaker-gender,
+.sneaker-color,
+.sneaker-avialable-colors,
+.sneaker-shop,
+.sneaker-size,
+.sneaker-brand-details{
+    margin: 10px;
+}
+    
+    .sneaker-info .name,
+    .sneaker-info .gender,
+    .sneaker-info .color-name{
+        flex-grow: 1;
+        font-size: 14px;
+        width: 60%;
+        text-align: right;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+.sneaker-info .label::after{
+    content: ": ";
+}
+
+    .sneaker-avialable-colors .label{
+        width: 100% !important;
+    
+    }
+    
+.sneaker-info .label{
+    
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+    width: 35%;
+
+}
+
+.sneaker-info .colors img,
+.sneaker-info .size-no{
+    width: 25%;
+    margin: 2px;
+}
+
+.sneaker-info .colors img{
+    padding: 5px;
+}
+
+.sneaker-info .colors img:hover{
+    background-color: var(--main-color-red);
+    transform: scale(2.5);
+    z-index: 2;
+}
+
+
+.sneaker-info .size-no{
+    padding: 5px;
+
+}
+
+.sneaker-info .size-no:hover,
+.sneaker-info .size-selected,
+.sneaker-info .color-selected{
+    background-color:var(--main-color-red);
+    color: var(--main-color-blue);
+    transform: scale(1.5);
+}
+
+.sneaker-info .not-avialable{
+    opacity: 0.2;
+    cursor: default;
+}
+.sneaker-info .not-avialable:hover{
+    opacity: 0.2;
+    cursor: default;
+    transform: scale(1);
+    background-color: white;
+
+}
+.size-guide{
+    text-transform: uppercase;
+    font-size: 10px;
+    color:white;
+    cursor: pointer;
+    transition: all 2s ease;
+}
+
+.shopping-cart{
+
+    font-size: 20px;
+   
+}
+.shopping-cart:hover{
+    letter-spacing: 2px;
+}
+
+.sneaker-brand-details{
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.sneaker-brand-details .brand-logo{
+    text-align: center;
+    width: 35%;
+}
+
+.sneaker-brand-details .brand-description{
+    text-align: justify;
+    padding: 10px;
+    font-size: 12px;
+}
+.suggested-item::before{
+    content: "Suggested item for you :";
+
+}
+.recent-visited::before{
+    content: "Recent visited item :"
+}
+.suggested-item::before,
+.recent-visited::before{
+    font-size: 20px;
+    border-bottom: 2px solid var(--main-color-red);
+    display: block;
+    color: var(--main-color-red);
+}
+
+.suggested-item,
+.recent-visited{
+    border: 1px solid var(--main-color-blue);
+    display: block;
+    margin: 20px 0;
+    padding: 10px;
+    height: 80vw;
+}
+
+.suggested-item .col-4,
+.recent-visited .col-4{
+   width: 50%;
+}
+
+    
+ .recent-visited .col-3:nth-of-type(1),
+.recent-visited .col-3:nth-of-type(3){
+;
+    margin-top: 45%;
+    
+    
+} 
+/*------------------------------------------------------------------------------------*/
+/*--------------------------      full image view    ----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+#close-full-view i{
+    font-size: 30px;
+    padding: 10px;
+    transition: all 2s ease;
+}
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*--------------------------      Message    ----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+.message{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.50);
+ 
+    
+    z-index: 5;
+}
+
+.message-box{
+    
+    position: relative;
+    width: 600px;
+    top: 20%;
+    left: 30%;
+    transform: translate(-30%, -20%);
+
+}
+
+
+
+.message-box img{
+    width: 220px;
+
+    z-index: 1;
+    position: absolute;
+}
+
+.message-box-details{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--main-color-blue);
+    width: 500px;
+    height: 150px;
+
+    top:26%;
+    left: 12%;
+    transform: translate(12%, 26%);
+    box-shadow: 2px 2px  15px white;
+    animation-name: expand_width;
+    animation-duration: 2s; 
+    transition: all 2s ease;    
+}
+
+
+@keyframes expand_width{
+    0%{width: 0;}
+    100%{width:500px;}
+}
+@keyframes shirnk_width{
+    100%{width: 0;}
+}
+
+
+.close-message{
+    margin: 5px 10px 5px 100px;
+    font-size: 25px;
+    display: none;
+
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px 5px 0;
+    background-color: var(--main-color-red);
+
+
+}
+
+.message-heading{
+    flex-grow: 1;
+    margin-left: 20px;
+    color: var(--main-color-blue);
+    font-family: 'Glass Antiqua', cursive !important;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size: 18px;
+
+}
+
+.close-message i{
+    color: white;
+    cursor: pointer;
+    transition: all 2s ease;
+}
+
+.close-message i:hover{
+    color: var(--main-color-blue);
+}
+
+.text-message{
+    margin: 10px 20px 10px 100px;
+    padding: 5px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    flex-grow: 1;
+    display: none;
+    align-items: center;
+    background-color: rgba(240, 240, 240, 0.13);
+}
+
+.message-box-details div:nth-of-type(3){
+    padding: 10px 20px 20px 100px;
+    width: 100%;
+display: none;
+justify-content: center;    
+}
+.message-box-details button{
+    font-family: 'Glass Antiqua', cursive !important;
+    background-color: var(--main-color-red);
+    color: var(--main-color-blue);
+    width: 100px;
+    padding: 5px 10px;
+    font-size: 18px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 2s ease;
+}
+
+.message-box-details button:hover{
+    background-color: white;
+}
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------      END:Sneaker     ----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+
+
+ 
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------       saved item          -------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+.saved-item-page .banner{
+    height: 230px;
+}
+.warning-text{
+    font-size: 20px;
+}
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------   END: saved item       ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/   
+    
+ 
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------       Shopping-cart     ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+    .cart{
+        flex-direction: column-reverse;
+    }
+    
+
+.cart-items{
+    width: 100%;
+}
+.item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    margin: 15px 0
+}
+
+.item img{
+    width: 33%;
+    height: 200px;
+    border: 2px solid var(--main-color-blue);
+    
+}
+.item-details{
+    height: 200px;
+    width: 100%;
+
+    justify-content: space-between;
+    padding: 5px;
+    color: var(--main-color-blue);
+    border: 2px solid var(--main-color-blue);
+    position: relative;
+}
+
+.item-details .delete-item{
+    position: absolute;
+    top:5px;
+    right: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 2s ease;
+}
+
+.item-details .delete-item:hover,
+.item-details .column .row i:hover{
+  color: black;
+}
+
+.item-details .column .label{
+    width: 70px;
+    
+    
+}
+.item-details .column .row{
+    justify-content: flex-start;
+}
+
+.item-details .data::before{
+    content: ": "
+}
+.item-details .data{
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 80px;
+    overflow: hidden;
+}
+
+.item-details .view-product{
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    background-color: var(--main-color-blue);
+    color: var(--main-color-red);
+    margin: 5px 0;
+    transition: all 2s ease;
+}
+
+.item-details .view-product:hover{
+    text-decoration: underline;
+    letter-spacing: 2px;
+    background-color: black;
+}
+.cart-item-quantity{
+    margin: 5px 10px;
+    padding: 2px 6px;
+    border: 2px solid var(--main-color-blue);
+}
+
+.item-details .column .row i{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.cart-details{
+   position:relative !important;
+    width: 100% !important;
+    left: 0 !important;    
+    min-height: auto;
+
+}
+.cart-details .row{
+    border-bottom: 2px solid var(--main-color-red);
+    margin: 5px 0;
+}
+
+.cart-details .row:nth-child(4){
+    border-bottom: none;
+
+}
+
+.cart-details .label,
+.cart-details .data{
+    font-size: 16px;
+    padding: 10px 0
+}
+.cart-details .label::after{
+    content: ": "
+}
+
+.cart-details .data{
+    padding-right:  20px !important;
+    width: 50%;
+    text-align: right;
+}
+
+.cart-details .row:nth-child(3){
+    justify-content: space-between;
+    padding-bottom: 20px
+}
+.cart-details .row:nth-child(3) .label{
+    width: 20%;
+}
+.cart-details .price{
+    width: 50%;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.cart-details .row:nth-child(4){
+    justify-content: flex-end;
+}
+
+.checkout{
+    padding: 10px 40px;
+    font-size: 18px;
+    margin-right: 10px;
+
+}
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------   END: Shopping-cart    ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+    
+    
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------           Store         ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+    .address{
+        width: 48%;
+        margin:  5px;
+    }
+
+    .address .name{
+        font-size: 18px;
+    }
+    
+.street,
+.shopNumber{
+
+    font-size: 16px;
+    }
+    
+    .map{
+        height: 600px;
+    }
+    
+    
+    /*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------           about         ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+    
+    .about-page .about{
+    margin: 0;
+}
+
+
+.about .content img{
+    max-width: 35%;
+}
+
+.about-us{
+    width: 85%;    
+}
+
+.about-us h2{
+    font-size: 20px;
+}
+
+.about-us div{
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+    
+    
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------           job           ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+
+.job h2{
+    font-size: 20px;
+}
+
+.job h4{
+    font-size: 18px;
+}
+
+.job div{
+font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------         Terms           ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+.terms_condition{
+
+    padding: 10px 0;
+}
+.terms_condition h2{
+ font-size: 20px;
+}
+
+.terms_condition div{
+
+    font-size: 18px;
+}
+ 
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:768px) and (min-width:300px) {
+
+        
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------Layout------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+    section .container{
+        padding: 0 20px 50px;
+
+    }
+    
+    .col-4{
+        width: 50%; 
+    }
+    
+    .col-3{
+        width: 100%;
+    }
+    
+    
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------Nav------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/ 
+     
+    
+    .mobile-nav{
+        display: block;
+    }
+    
+    .mobile-nav a:hover{
+        cursor: pointer;
+    }
+    .nav-other{
+        display: none;
+    }
+    .desktop-nav{
+        display: none;
+    }
+    
+    .mobile-nav-item{
+        display: none;
+        width: 95%;
+        margin: auto;
+        background-color: var(--main-color-red);
+        left: 2.5%;
+        padding: 20px;
+        
+        box-shadow: 2px 2px 10px black;
+    }
+    
+    .mobile-icon{
+        margin-top: 75px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        background-color: var(--main-color-blue);
+        padding: 5px;
+    }
+    .mobile-icon i{
+        
+        color: var(--main-color-red);
+        padding: 2px 20px;
+        font-size: 25px;
+    }
+    
+
+    .mobile-nav-item .row{
+        flex-direction: column;
+    }
+    .mobile-nav-item  a{
+        padding: 10px;
+        font-size: 18px;
+    }
+    .nav-logo{
+        width: 85px;
+        height: 85px;
+        top: 0%;
+    }
+    
+    
+    
+    .nav-control{
+        height: 85px;
+        width: 100%;
+        top:0;
+        margin: 0;
+        transform: translateY(0);
+        transition: all 1s;
+        padding-left: 40px;
+
+    }
+    
+
+    .expand{
+        margin-left: 15px;
+    }
+    .nav-control a{
+        padding: 5px;
+    }
+    
+    .nav-control a i.fa-bars,
+    .nav-control a i.fa-window-close{
+        font-size: 25px;
+        background-color: var(--main-color-red);
+        color: var(--main-color-blue);
+        padding: 10px;
+    }
+    
+    .nav-search{
+        top: 90px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        margin: auto;
+        
+    }
+    
+    #desktop-search-output .col-3,
+    #desktop-search-output .col-5{
+        width: 33%
+    }
+    
+    
+      
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------Index.html--------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/ 
+    
+    
+/*-------------------------------------------------------------------------*/
+/*-----------------Slide show--------------------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+   
+    .bullet-points,
+    .controls{
+        top:42vw !important;
+    }
+    
+    .bullet{
+        width: 15px;
+        height: 15px;
+    }
+
+    
+    .control-box{
+        width: auto;
+
+        
+    }
+    .control-box i{
+        font-size: 16px;
+        padding: 5px;
+    }
+    
+    .featured {
+        font-size: 10px;
+        padding: 10px 30px 10px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+    }
+    
+    .featured i{
+        font-size: 25px;
+        padding: 05px;
+    }
+    
+    .slide-container{
+        width: 100%;
+    }
+    
+  
+
+    
+    .product-row .row .col-5{
+        width: 100%;
+        background-color: var(--main-color-blue);
+    }
+    
+    .product-row .row .col-5:nth-of-type(1){
+        margin: 10px 0;
+    }
+    .product-row .row .col-5:nth-of-type(1) img{
+        
+        transform: rotate(0deg);
+        width: 70px;
+    }
+    .product-row .row .col-5:last-of-type img{
+        transform: rotate(0deg);
+        width: 70px;
+
+    }
+
+    
+    .product-row .row .row{
+        flex-direction: row;
+        justify-content: space-around !important;
+        height: 35vw;
+        
+    }
+
+    .product-row .row .row .col-3{
+        width: 33%;
+    }
+    
+    .product-row .row .row .content{
+        padding: 5px;
+    }
+    
+    .product-row .row .row .col-3 .content{
+        height: auto;
+    
+
+    }
+
+    .product-row .row  .col-5{
+  
+        margin: 50px 0 20px;
+    
+    }
+    
+    .featured-product-details .row:not(:nth-of-type(4)){
+        display: none;
+    }
+    
+    .featured-product-details{
+        width:100%;
+        height: 25vw;
+    }
+    .featured-product-details .row:nth-of-type(4){
+        width: 100% !important;
+    }
+    
+    #new-arrival .banner{
+        height: 120px;
+    }
+
+    #on-sale .banner{
+        height: 200px;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    
+        
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*Sneaker-block------------------------------------------------------------------------------------*/
+    .product-row{
+        justify-content: center;
+    }
+    .sneaker-block{
+        width: 50%;
+        padding: 2%;
+    }  
+    .sneaker-block:hover{
+        padding: 2%;
+        transform: scale(1.1);
+    }
+
+  
+    .sneaker-block .content{
+       padding: 5px;
+        margin: 0px;
+
+    }
+    .sneaker-block:hover .content{
+    padding: 5px;
+    display: flex;
+    height: 250px;
+    
+    }
+
+    .sneaker-block .sneaker-pic{
+        height:210px;
+    }  
+    .sneaker-block:hover .sneaker-pic{
+        margin-top: 50px;
+    } 
+    
+    
+    .sneaker-block:hover .avialable-colors{
+    display: none;
+    }
+    
+    .sneaker-block .price-tag{
+        position: absolute; 
+        top: 30px;
+        right: -35px;
+        width: 135px;
+        z-index: 1;
+        display: none;
+    }
+    
+    .sneaker-block .price{
+        width: 50px;
+        padding: 1px;
+        position: absolute;;
+        top:80px;
+        right: 31px;
+        font-size: 12px;
+    }
+    
+    
+    
+    .sneaker-block .details-block{
+        width: 100%;
+        top: 78%;
+        left: -15px;
+    }
+
+    .sneaker-block .sneaker-details{
+        padding: 4px 0;
+        height: 75px;
+    }
+    
+    
+    .sneaker-block .brand-logo{
+        width: 40px;
+        padding: 3px;
+    }
+
+
+
+    .sneaker-block .brand-logo-details{
+        font-size: 16px !important;
+        left: 5%;
+        top: 36%;
+                font-size: 12px !important;
+
+    }
+    
+    
+
+    .sneaker-block .brand-logo-details:nth-of-type(2){
+          width: 95% !important;
+        
+        font-size: 12px !important;
+
+        padding: 10px;
+    }
+    .sneaker-block .brand-logo-details:nth-of-type(3){
+        padding: 10px ;
+        background-color: var(--main-color-red);
+        color: var(--main-color-blue);
+    }
+    .sneaker-block:hover .brand-logo-details:nth-of-type(2){
+        width: 0% !important;
+        padding: 10px 0;
+                font-size: 14px;
+
+    }
+
+
+    .sneaker-block:hover .brand-logo-details{
+        width: 95%;
+        padding: 10px 10px 10px 20px;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+/*------------------------------------------------------------------------------------*/
+/*------------------------footer------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+    footer .row{
+        justify-content: space-between;
+    }
+    
+    footer  .col-2{
+        width: 100%;
+    }
+    
+    footer .col-3,
+    footer .col-1{
+        width: 100%;
+    }
+    
+    .newsletter{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .newsletter input {
+        margin: 10px 0;
+    }
+    
+    .newsletter .button{
+        margin: 10px;
+        font-size: 14px;
+    }
+    
+    footer h3{
+        border-bottom: 1px solid
+    }
+    
+    footer .row a{
+        margin-left: 10px;
+        padding-top:10px;
+    }
+    
+    footer p{
+        width: 100%;
+        font-size: 14px;
+    }
+    
+    .social-links{
+        text-align: center;
+        border: 1px solid;
+        margin: 15px;
+    }
+    
+    
+    
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------Sneaker Collection----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+.sneaker_page .banner{
+
+    height: 35vw;
+
+}
+
+#banner-text{
+
+    font-size: 4vw;
+
+    
+}
+
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*-----------Paging------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+.paging i{
+    padding: 8px 12px;
+  
+}
+
+
+
+.paging .page{
+    padding: 8px 12px;
+    font-size: 20px;
+}
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------END: Sneaker Collection-----------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------      Sneaker     ----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+.sneaker-info{
+    flex-direction: column;
+}
+
+
+.sneaker-info .col-2:nth-of-type(1){
+    width: 100%;
+}
+
+.sneaker-info .col-2:nth-of-type(2){
+    width: 100%;
+    background-color: var(--main-color-blue);
+    color: var(--main-color-red);
+
+}
+
+.sneaker-slider{
+    justify-content: center;
+    text-align: center;
+}
+
+
+.sneaker-slider .col-3:nth-child(1),
+.sneaker-slider .col-3:nth-child(3){
+    width: 15%;
+}
+
+.sneaker-slider .col-3 i{
+    font-size: 25px;
+}
+
+.sneaker-slider .col-3:nth-child(2){
+    width: 70%;
+    padding: 20px 0;
+    position: relative;
+    
+}
+
+.sneaker-slider .col-3:nth-child(2) div{
+    position: absolute;
+    color: blue;
+
+    padding: 5px;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    justify-content: space-between;
+
+    display: flex;
+    transition: all 2s ease;
+}
+.sneaker-slider .col-3:nth-child(2):hover div i{
+    display: flex;
+}
+
+
+i.saved{
+    display: flex !important;
+    color: var(--main-color-red) !important;
+}
+
+
+.sneaker-slider .col-3:nth-child(2) div i{
+    display: none;
+    padding: 10px;
+    font-size: 25px !important;
+    margin: 5px;
+}
+.sneaker-images{
+    padding: 5px;
+    justify-content:flex-start;
+    border: 2px solid var(--main-color-blue);
+
+}
+.sneaker-images >img{
+    width: 24%;
+    margin: 0.5%;
+    padding: 5px;
+}
+
+
+
+
+
+.sneaker-images img.selected{
+    border: 2px solid var(--main-color-red);
+    transform: scale(1.2);
+    z-index: 1;
+    background-color: white;
+}
+
+
+
+.sneaker-description::before{
+    content: "Product Details :";
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    color: var(--main-color-blue);
+    text-decoration: underline;
+}
+.sneaker-description{
+    padding: 20px 0;
+    text-align: justify;
+    word-spacing: 1px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+
+.sneaker-features::before{
+    content: "Product features :";
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    color: var(--main-color-blue);
+    text-decoration: underline;
+}
+
+.sneaker-features ul{
+    padding: 5px 30px;
+     text-align: justify;
+    word-spacing: 1px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+
+.sneaker-price{
+    justify-content: center
+}
+
+.sneaker-price .price{
+    font-size: 25px;
+    margin: 10px;
+}
+
+.sneaker-name,
+.sneaker-style,
+.sneaker-gender,
+.sneaker-color,
+.sneaker-avialable-colors,
+.sneaker-shop,
+.sneaker-size,
+.sneaker-brand-details{
+    margin: 10px;
+    border-bottom: 1px solid var(--main-color-red)
+}
+.sneaker-info .label::after{
+    content: ": ";
+}
+.sneaker-info .label{
+    
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+    width: 30%;
+
+}
+    .sneaker-avialable-colors .label{
+    width: 100%;
+        margin-bottom: 5vw;
+    }
+    .sneaker-info .name,
+     .gender,
+    .sneaker-info .color-name{
+        font-size: 14px;
+    }
+
+.sneaker-info .colors,
+.sneaker-info .size{
+    width: 100%;
+    padding: 10px ;
+    justify-content: flex-start;
+}
+.sneaker-info .colors img,
+.sneaker-info .size-no{
+    width: 24%;
+    margin: 0.5%;
+    border: 1px solid black;
+}
+
+.sneaker-info .colors img{
+    cursor: pointer;
+    padding: 5px;
+    transition: all 2s ease;
+}
+
+.sneaker-info .colors img:hover{
+    background-color: var(--main-color-red);
+    transform: scale(2.5);
+    z-index: 2;
+}
+
+
+.sneaker-info .size-no{
+    padding: 15px;
+    text-align: center;
+    background-color: white;
+    color: var(--main-color-blue);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s linear;
+}
+
+.sneaker-info .size-no:hover,
+.sneaker-info .size-selected,
+.sneaker-info .color-selected{
+    background-color:var(--main-color-red);
+    color: var(--main-color-blue);
+    transform: scale(1.5);
+}
+
+.sneaker-info .not-avialable{
+    opacity: 0.2;
+    cursor: default;
+}
+.sneaker-info .not-avialable:hover{
+    opacity: 0.2;
+    cursor: default;
+        transform: scale(1);
+    background-color: white;
+
+}
+.size-guide{
+    text-transform: uppercase;
+    font-size: 14px;
+    color:white;
+    cursor: pointer;
+    transition: all 2s ease;
+}
+.size-guide:hover{
+    text-decoration: underline;
+    letter-spacing: 3px;
+    color:var(--main-color-red);
+}
+    .sneaker-shop{
+        justify-content: center;
+    }
+.shopping-cart{
+    padding: 10px;
+    margin: 30px 0 40px;
+    width: 60vw;
+    text-align: center;
+    background-color: white;
+    color:var(--main-color-blue);
+    font-family: 'Glass Antiqua', cursive !important;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 2s ease;
+}
+.shopping-cart:hover{
+    background-color: var(--main-color-red);
+    letter-spacing: 5px;
+}
+
+.sneaker-brand-details{
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.sneaker-brand-details .brand-logo{
+    text-align: center;
+    width: 30%;
+}
+
+.sneaker-brand-details .brand-description{
+    text-align: justify;
+    padding: 20px;
+    font-size: 14px;
+}
+    
+.suggested-item::before{
+    content: "Suggested item for you :";
+
+}
+.recent-visited::before{
+    content: "Recent visited item :"
+}
+.suggested-item::before,
+.recent-visited::before{
+    font-size: 20px;
+
+}
+
+.suggested-item,
+.recent-visited{
+    border: 1px solid var(--main-color-blue);
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+     
+
+}
+
+.recent-visited .col-3:nth-of-type(1),
+.recent-visited .col-3:nth-of-type(3){
+    width: 10%;
+    text-align: center;
+}
+
+.recent-visited .col-3:nth-of-type(1) i,
+.recent-visited .col-3:nth-of-type(3) i{
+    padding: 20px;
+    transition: all 2s ease;
+    
+}
+
+.recent-visited .col-3:nth-of-type(1) i:hover,
+.recent-visited .col-3:nth-of-type(3) i:hover{
+    background-color: var(--main-color-blue);
+    color: var(--main-color-red);
+    
+}
+.recent-visited .col-3:nth-of-type(2){
+    width: 80%;
+    text-align: center;
+}
+
+.recent-visited .col-3:nth-of-type(2) .row{
+    width: 100%;
+}
+    
+
+#suggested-sneaker,
+#recent-visited-items{
+    height: auto;
+    justify-content: center;
+    }
+    
+    #suggested-sneaker .col-4{
+        width: 40vw;
+        margin: 20px 0;
+    }   
+    
+
+    #recent-visited-items .col-4{
+        width: 35vw;
+        margin: 20px 0;
+    }
+
+    
+
+  .sneaker .featured-product-details .row {
+    display: block;
+
+}  
+    
+   #recent-visited-items .featured-detail-block {
+    height:auto;
+    } 
+    
+    #recent-visited-items .featured-product-details {
+        height: auto;
+    }   
+    
+    #recent-visited-items .featured-product-details .row{
+        height: auto !important;
+    }
+
+
+/*------------------------------------------------------------------------------------*/
+/*--------------------------      full image view    ----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+#full-view{
+    position:absolute;
+    z-index: 5;
+    top:0%;
+    background-color: white !important;
+    justify-content: center;
+    
+    
+
+}
+
+#full-view img{
+    width: 100vw;
+    height: 60vh;
+    padding: 10vh 5vw;
+    border: 2px solid
+}
+
+#close-full-view{
+    position: fixed;
+    z-index: 6;
+    top: 5%;
+    right: 10%;
+}
+
+#close-full-view i{
+    font-size: 35px;
+    padding: 10px;
+    transition: all 2s ease;
+}
+
+#close-full-view i:hover{
+    background-color: black;
+    color: red;
+}
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*--------------------------      Message    ----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+.message{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.50);
+ 
+    
+    z-index: 5;
+}
+
+.message-box{
+    
+    width: 100%;
+    top:0%;
+
+}
+
+
+
+.message-box img{
+    width: 150px;
+    
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    margin-top:145px;
+    border: 5px solid var(--main-color-red);
+}
+
+.message-box-details{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--main-color-blue);
+    width: 90%;
+    
+    height:400px;
+
+    top:0%;
+    left: -18%;
+    box-shadow: 2px 2px  15px white;
+    animation-name: expand_width;
+    animation-duration: 2s; 
+    transition: all 2s ease; 
+    
+    padding: 150px 10px 30px
+}
+
+
+@keyframes expand_width{
+    0%{height: 0;
+        padding: 0;}
+    100%{height:400px;
+    padding: 150px 10px 30px;}
+}
+@keyframes shirnk_width{
+    100%{height: 0;
+    padding: 0;}
+}
+
+
+.close-message{
+    margin: 10px 10px 5px;
+    font-size: 25px;
+    display: none;
+
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px 5px 0;
+    background-color: var(--main-color-red);
+
+
+}
+
+.message-heading{
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    
+
+}
+
+.close-message i{
+    position: fixed;
+    top: 4%;
+    right: 5%;
+
+}
+
+.close-message i:hover{
+    color: var(--main-color-blue);
+}
+
+.text-message{
+    margin:  10px;
+
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+    min-height: 80px;
+}
+
+.message-box-details div:nth-of-type(3){
+    padding: 10px 20px 20px 100px;
+    width: 100%;
+display: none;
+justify-content: center;    
+}
+.message-box-details button{
+    font-family: 'Glass Antiqua', cursive !important;
+    background-color: var(--main-color-red);
+    color: var(--main-color-blue);
+    width: 100px;
+    padding: 5px 10px;
+    font-size: 18px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 2s ease;
+}
+
+.message-box-details button:hover{
+    background-color: white;
+}
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------      END:Sneaker     ----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+ 
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------       saved item          -------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+.saved-item-page .banner{
+    height: 200px;
+}
+.warning-text{
+    font-size: 18px;
+}
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------   END: saved item       ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/   
+
+    
+    
+    
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------       Shopping-cart     ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+    .cart{
+        flex-direction: column-reverse;
+    }
+    
+
+.cart-items{
+    width: 100%;
+}
+.item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    margin: 15px 0
+}
+
+.item img{
+    width: 38%;
+    height: auto;
+    border: 2px solid var(--main-color-blue);
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    z-index: 1;
+    
+}
+.item-details{
+    height: 200px;
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5px;
+    color: var(--main-color-blue);
+    border: 2px solid var(--main-color-blue);
+    position: relative;
+}
+
+    .item-details .column{
+        margin: 10px;
+        width: 50%;
+    }
+
+.item-details .delete-item{
+    position: absolute;
+    top:5px;
+    right: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 2s ease;
+}
+
+.item-details .delete-item:hover,
+.item-details .column .row i:hover{
+  color: black;
+}
+
+.item-details .column .label{
+    width: 70px;
+    font-size: 14px;
+    
+    
+}
+.item-details .column .row{
+    justify-content: center;
+}
+
+.item-details .data::before{
+    content: ": "
+}
+.item-details .data{
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.item-details .view-product{
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    background-color: var(--main-color-blue);
+    color: var(--main-color-red);
+    margin: 5px 0;
+    transition: all 2s ease;
+}
+
+.item-details .view-product:hover{
+    text-decoration: underline;
+    letter-spacing: 2px;
+    background-color: black;
+}
+.cart-item-quantity{
+    margin: 5px 10px;
+    padding: 2px 6px;
+    border: 2px solid var(--main-color-blue);
+}
+
+.item-details .column .row i{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.cart-details{
+   position:relative !important;
+    width: 100% !important;
+    left: 0 !important;    
+    min-height: auto;
+
+}
+.cart-details .row{
+    border-bottom: 2px solid var(--main-color-red);
+    margin: 5px 0;
+}
+
+.cart-details .row:nth-child(4){
+    border-bottom: none;
+
+}
+
+.cart-details .label,
+.cart-details .data{
+    font-size: 16px;
+    padding: 10px 0
+}
+.cart-details .label::after{
+    content: ": "
+}
+
+.cart-details .data{
+    padding-right:  20px !important;
+    width: 50%;
+    text-align: right;
+}
+
+.cart-details .row:nth-child(3){
+    justify-content: space-between;
+    padding-bottom: 20px
+}
+.cart-details .row:nth-child(3) .label{
+    width: 20%;
+}
+.cart-details .price{
+    width: 50%;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.cart-details .row:nth-child(4){
+    justify-content: flex-end;
+}
+
+.checkout{
+    padding: 10px 40px;
+    font-size: 18px;
+    margin-right: 10px;
+
+}
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------   END: Shopping-cart    ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+    
+    
+    
+        
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------           Store         ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+    .address{
+        width: 100%;
+        margin:  5px;
+    }
+
+    .address .name{
+        font-size: 16px;
+    }
+    
+.street,
+.shopNumber{
+
+    font-size: 14px;
+    }
+    
+    .map{
+        height: 500px;
+    }
+    
+    
+     
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------           about         ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+    
+    .about-page .about{
+    margin: 0;
+}
+
+
+.about .content img{
+    max-width: 45%;
+}
+
+.about-us{
+    width: 85%;    
+}
+
+.about-us h2{
+    font-size: 18px;
+}
+
+.about-us div{
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+}
+    
+  
+        
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------           job           ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+
+.job h2{
+    font-size: 18px;
+}
+
+.job h4{
+    font-size: 16px;
+}
+
+.job div{
+font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+}
+
+
+    
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------         Terms           ---------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+
+.terms_condition{
+
+    padding: 10px 0;
+}
+.terms_condition h2{
+ font-size: 18px;
+}
+
+.terms_condition div{
+
+    font-size: 16px;
+}
+ 
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

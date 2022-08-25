@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sneaker World</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap" rel="stylesheet">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="sneakerworkd_db.json"></script>
+        <script  src="myscript.js"></script>
+
+        
+    </head>
+    <body>
+        <nav>
+            <div class="container">
+
+                <div class="nav-control">
+                    <div class="row">
+                        <div class="desktop-nav"><a onclick="transferToSneakerCollection('sale', 'new in')">New arrival</a></div>
+                        <div class="desktop-nav"><a onclick="transferToSneakerCollection('gender', 'women')">Women</a></div>
+                        <div class="desktop-nav"><a onclick="transferToSneakerCollection('gender', 'men')">Men</a></div>
+                        <div class="desktop-nav"><a onclick="transferToSneakerCollection('sale', 'on sale')">On sale</a></div>
+                        <div class="desktop-nav"><div class="drop-down"> 
+                            <a>Brands <i class="fa fa-caret-down"></i></a>
+                            <div class="drop-down-content">
+                                <a onclick="transferToSneakerCollection('brand', 'BID102')">Adidas</a>
+                                <a onclick="transferToSneakerCollection('brand', 'BID103')">Converse</a>
+                                <a onclick="transferToSneakerCollection('brand', 'BID104')">Nike</a>
+                                <a onclick="transferToSneakerCollection('brand', 'BID105')">Puma</a>
+                                <a onclick="transferToSneakerCollection('brand', 'BID106')">Vans</a>
+                                <a onclick="transferToSneakerCollection('brand', 'BID107')">Onitsuka Tiger</a>
+                                    </div>
+
+                                    </div>
+                        </div>
+                        
+                        
+                        
+                   
+                     
+                        <span></span>
+                        <input id="search-text"  type="text" placeholder="Type here to search item">          
+                        <a><i onclick="searchClick(this, '#search-text')" class="fa fa-search"></i></a>
+                        <div class="mobile-nav">
+                        <a onclick="displayMobileNav(this)" class="mobile-nav"><i class="fa fa-bars"></i> </a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div id="desktop-search-output" class="nav-search">
+                    <!---  these codes are generate in displaysearchOuptput() funcuntion
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="content">
+                                <div class="img-block">
+                                    <img src="image/product/1183A201_001_SR_FR_GLB-1.jpg">
+                                </div>
+                                <div class="details-block">
+                                    <div class="name">AnitSuka tiger</div>
+                                    <div class="style">Mexico 66</div>
+                                    <div class="price">200.00</div>
+                                    <div class="show"><a>view</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5"><div class="content"><a class="button">View all()</a></div></div>
+                    </div>
+                    -->
+                </div>
+                <div class="mobile-nav-item mobile-nav">
+                     <div class="mobile-icon">
+                            <a href="stores.html"><i class="fa fa-map-marker"></i></a>
+                            <a href="saved_item.html"><i class="fa fa-heart"></i></a>
+                            <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                    
+                     <div class="row">
+                            <a onclick="transferToSneakerCollection('sale', 'new in')">New arrival</a>
+                            <a onclick="transferToSneakerCollection('gender', 'women')">Women</a>
+                            <a onclick="transferToSneakerCollection('gender', 'men')">Men</a>
+                            <a onclick="transferToSneakerCollection('sale', 'on sale')">On sale</a>
+                            <div class="drop-down"> 
+                                <a>Brands <i class="fa fa-caret-down"></i></a>
+                                <div class="drop-down-content">
+                                    <a onclick="transferToSneakerCollection('brand', 'BID102')">Adidas</a>
+                                    <a onclick="transferToSneakerCollection('brand', 'BID103')">Converse</a>
+                                    <a onclick="transferToSneakerCollection('brand', 'BID104')">Nike</a>
+                                    <a onclick="transferToSneakerCollection('brand', 'BID105')">Puma</a>
+                                    <a onclick="transferToSneakerCollection('brand', 'BID106')">Vans</a>
+                                    <a onclick="transferToSneakerCollection('brand', 'BID107')">Onitsuka Tiger</a>
+                                </div>
+
+                            </div>
+                        
+                        </div>
+                </div>
+                
+                <div class="nav-other">
+                    <div class=" row">
+                        <a href="stores.html"><i class="fa fa-map-marker"></i></a>
+                        <a href="saved_item.html"><i class="fa fa-heart"></i></a>
+                        <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+                <a href="index.html">
+                    <div  class="nav-logo">
+                    </div>
+                </a>
+              
+               
+            </div>
+        </nav>
+      
+        
+        <section id="slide-show">
+            <div class="container">
+                <div class="slide-container">
+                
+                <div class="bullet-points">
+                   <div class="bullet filled-bullet"> </div>
+                   <div class="bullet"> </div>                    
+                </div>
+                <div class="controls">
+                    <div id="playvideo" onclick="playPause()" class="control-box">
+                        <i id="playOrPause" class="fa fa-pause"></i>
+                    </div>
+                    <div onclick="sounds()" class="control-box">
+                        <i id="muteOrUnmute" class="fa fa-volume-off"></i>
+                    </div>
+                </div>
+                                    
+                
+                <div class="slide">
+                    <div class="product-add">
+                        <video muted="muted" >
+                            <source src="https://res.cloudinary.com/rajib-dey-test-one/video/upload/v1661426477/sneakerworld/Adidas_elv366.mp4" type="video/mp4">
+                            your browser does not support HTML video
+                        </video>
+                    </div>
+                   
+                    <div class="product-row">
+                        <div class="featured">Adidas's Featured Item <i class="fa fa-arrow-circle-down"></i></div>
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="content">
+                                    <img src="image/product/adidas_trans2_1.png">
+                                </div>
+                            </div>
+                            <div class="row" id="featured-adidas">
+                                <!--
+                                
+                                <div class="col-3">
+                                  <div class="content">
+                                        <div class="featured-img-block">
+                                            <img src="image/product/fy2115_nvy_01.jpg">
+                                         </div>
+                                      
+                                      <div class="featured-detail-block">
+                                          <div class="featured-product-details">
+                                              <div class="row">
+                                                <div class="style">Adidas Performanc xs</div>
+                                                <div class="price">200.00</div>
+                                              </div>
+                                              <div class="row"><div>Avialable colors</div></div>
+                                              <div class="row">
+                                                        <img src="image/product/1183A201_105_SR_BK_GLB.jpg">
+                                                        <img src="image/product/1183A201_105_SR_BT_GLB.jpg">
+                                                        <img src="image/product/1183A201_105_SR_LT_GLB.jpg">
+                                                        <img src="image/product/1183A201_105_SR_RT_GLB.jpg">  
+                                                        <img src="image/product/1183A201_105_SR_BK_GLB.jpg">
+                                                        <img src="image/product/1183A201_105_SR_BT_GLB.jpg">
+                                                        <img src="image/product/1183A201_105_SR_LT_GLB.jpg">
+                                                        <div>  +3 more</div>
+                                              </div>
+                                             <div class="row">
+                                                <div class="show">View </div>
+                                              </div>
+                                              
+                                          </div>
+                                      </div>
+                                      
+                                    </div>
+                                </div>  
+                                
+                                <div class="col-3">
+                                  <div class="content">
+                                        <div class="featured-img-block">
+                                            <img src="image/product/image01.jpg">
+                                         </div>
+                                      
+                                          <div class="featured-detail-block">
+                                          <div class="featured-product-details">
+                                              <div class="row">
+                                                <div class="style">Adidas Performanc xs</div>
+                                                <div class="price">200.00</div>
+                                              </div>
+                                                                                            <div class="row"><div>Avialable colors</div></div>
+
+                                              <div class="row">
+                                                        <img src="image/product/1183A201_105_SR_BK_GLB.jpg">
+                                                        <img src="image/product/1183A201_105_SR_BT_GLB.jpg">
+                                                       
+                                              </div>
+                                             <div class="row">
+                                                                                            <div class="show">View <span>(3 more colors)</span></div>
+
+                                          
+                                          </div>
+                                          </div>
+                                          
+                                         
+                                          
+                                          
+                                        
+                                      </div>
+                                    </div>
+                                </div>
+                             -->
+                            </div>
+                            
+                            <div class="col-5">
+                                <div class="content">
+                                    <img src="image/product/adidas_trans2_1.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <div class="product-add">
+                        <video  muted="muted" >
+                            <source src="https://res.cloudinary.com/rajib-dey-test-one/video/upload/v1661427518/sneakerworld/Converse_Suminigashi_on_Vimeo_m9dky3.mp4" type="video/mp4">
+                            your browser does not support HTML video
+                        </video>
+                    </div>
+                   
+                    <div class="product-row">
+                        <div class="featured">Converse's Featured Item <i class="fa fa-arrow-circle-down"></i></div>
+    
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="content">
+                                    <img src="image/product/converse_homepage_logo_400x192_1.png">
+                                </div>
+                            </div> 
+                            <div class="row" id="featured-converse">
+                                
+                            </div>
+                            
+                            <div class="col-5">
+                                <div class="content">
+                                    <img src="image/product/converse_homepage_logo_400x192_1.png">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <div class="product-add">
+                        <video muted="muted" >
+                            <source src="https://res.cloudinary.com/rajib-dey-test-one/video/upload/v1661426626/sneakerworld/Nike_Joyride_-_Behind_the_Design_on_Vimeo_aeuvmp.mp4" type="video/mp4">
+                            your browser does not support HTML video
+                        </video>
+                    </div>
+                   
+                    <div class="product-row">
+                        <div class="featured">Nike's Featured Item <i class="fa fa-arrow-circle-down"></i></div>
+
+                         <div class="row">
+                            <div class="col-5">
+                                <div class="content">
+                                    <img src="image/product/nike_2_trans_2.png">
+                                </div>
+                            </div> 
+                            <div class="row" id="featured-nike">
+                                
+                            </div>
+                            
+                            <div class="col-5">
+                                <div class="content">
+                                    <img src="image/product/nike_2_trans_2.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <div class="product-add">
+                        <video muted="muted" >
+                            <source src="https://res.cloudinary.com/rajib-dey-test-one/video/upload/v1661427407/sneakerworld/PUMA_-_The_Suede_on_Vimeo_jvgb97.mp4" type="video/mp4">
+                            your browser does not support HTML video
+                        </video>
+                    </div>
+                   
+                    <div class="product-row">
+                        <div class="featured">Puma's Featured Item <i class="fa fa-arrow-circle-down"></i></div>
+                         <div class="row">
+                            <div class="col-5">
+                                <div class="content">
+                                    <img src="image/product/puma_trans_1.jpg">
+                                </div>
+                            </div> 
+                            <div class="row" id="featured-puma">
+                                
+                            </div>
+                            
+                            <div class="col-5">
+                                <div class="content">
+                                    <img src="image/product/puma_trans_1.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <div class="product-add">
+                        <video muted="muted" >
+                            <source src="https://res.cloudinary.com/rajib-dey-test-one/video/upload/v1661427665/sneakerworld/Vans_1966_on_Vimeo_dnl1an.mp4" type="video/mp4">
+                            your browser does not support HTML video
+                        </video>
+                    </div>
+                   
+                    <div class="product-row">
+                        <div class="featured">Van's Featured Item <i class="fa fa-arrow-circle-down"></i></div>
+
+                         <div class="row">
+                            <div class="col-5">
+                                <div class="content">
+                                    <img src="image/product/vans_trans_1.png">
+                                </div>
+                            </div> 
+                            <div class="row" id="featured-vans">
+                                
+                            </div>
+                            
+                            <div class="col-5">
+                                <div class="content">
+                                    <img src="image/product/vans_trans_1.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <div class="product-add">
+                        <video muted="muted" >
+                            <source src="https://res.cloudinary.com/rajib-dey-test-one/video/upload/v1661427757/sneakerworld/OnitsukaTiger_X_Valentino_Mexico66_on_Vimeo_zpltgc.mp4" type="video/mp4">
+                            your browser does not support HTML video
+                        </video>
+                    </div>
+                   
+                    <div class="product-row">
+                        <div class="featured">Onitsuka Tiger's Featured Item <i class="fa fa-arrow-circle-down"></i></div>
+
+                         <div class="row">
+                            <div class="col-5">
+                                <div class="content">
+                                    <img src="image/product/onitsuka_tiger_400x400_trans_2.png">
+                                </div>
+                            </div> 
+                            <div class="row" id="featured-onit">
+                                
+                            </div>
+                            
+                            <div class="col-5">
+                                <div class="content">
+                                    <img src="image/product/onitsuka_tiger_400x400_trans_2.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                
+                
+                </div>
+                
+
+            </div>
+        </section>
+        
+        <section id="new-arrival">
+            <div class="container">
+                <div class="banner">
+                </div>
+                <div class="row product-row" id="new-arrival-product">
+                    <!--
+                    <div class="col-4 sneaker-block">
+                            <div class="content">
+                                 <div class="sale-type">
+                                    <img src="image/banner/topItem.png">    
+                                </div>
+                                 <div class="product-block">
+                                     <div class="sneaker-pic">
+                                        <img src="image/product/adidas-originals-basket-profi%20(8).jpg">    
+                                     </div>
+                                     <div class="price-tag">
+                                        <img src="image/banner/pricetag.png">
+                                         <div class="price">200.00</div>
+                                     </div>
+                                     
+                                </div>
+                                
+                                <div class="avialable-colors">
+                                    <div class="slideshow">
+                                        <div class="colors">
+                                             <img src="image/product/adidas-originals-basket-profi%20(7).jpg">    
+                                             <img src="image/product/adidas-originals-basket-profi%20(9).jpg">    
+                                             <img src="image/product/adidas-originals-basket-profi%20(10).jpg">    
+                                             <img src="image/product/adidas-originals-basket-profi%20(11).jpg">    
+                                             <img src="image/product/adidas-originals-basket-profi%20(12).jpg">    
+                                             <img src="image/product/adidas-originals-basket-profi%20(13).jpg">     
+                                         </div>
+                                    
+                                    </div>
+                                    
+                                  
+
+                                </div>
+                                <div class="details-block">
+                                    <div class="sneaker-details">
+                                      <div class="brand-logo">
+                                            <img src="image/product/adidas_trans2_1.png">
+                                      </div>
+                                        <div class="brand-logo-details">
+                                            Addidas  adasdasdf xxxxxxxxxyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+                                        </div> 
+                                        <div class="brand-logo-details">
+                                             Avialable Colors: <span>+ 3</span>
+                                        </div>
+                                    </div>  
+                                
+                                </div>
+                                
+                             
+                                
+                                
+                            </div>
+                        </div>  
+                    -->
+                </div>
+            </div>
+        </section>
+        
+        <section id="on-sale">
+            <div class="container">
+                <div class="banner">
+                </div>
+                <div class="row product-row" id="on-sale-product">
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        <!--
+        <section style="height: 1500px;background-color: aquamarine">
+        
+        </section>
+            
+        <section style="height: 1500px;background-color:brown">
+        
+        </section>
+        -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="content">
+                            <div class="row">
+                              <div class="col-3">
+                                    <h3>locations</h3>
+                                    <a href="stores.html">Find the nearest Shop</a>
+                                    <h3>About us</h3>
+                                    <a href="about.html">About Sneaker World</a>
+                                    <a href="career.html">Careers</a>
+                                    <a href="trams_condition.html">Terms and condition</a>
+
+                                </div>
+                                <div  class="col-3">
+                                    <h3> New Arrivals</h3>
+                                    <a onclick= "transferToSneakerCollection('newincollection', 'men')"> Men</a>
+                                    <a  onclick= "transferToSneakerCollection('newincollection', 'women')"> Women</a>
+                                    <h3>On sale</h3>
+                                     <a onclick= "transferToSneakerCollection('onsalecollection', 'men')">Men</a>
+                                     <a onclick= "transferToSneakerCollection('onsalecollection', 'women')">Women</a>
+                                </div>
+                                
+                                <div class="col-3">
+                                    <h3>Fit guide</h3>
+                                    <a>Men</a>
+                                    <a>Women</a>
+                                    <h3>Others</h3>
+                                    <a href="cart.html">Shopping Cart</a>
+                                    <a href="saved_item.html">Saved item</a>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-1">
+                                    <h3>Drop  your email address</h3>
+                                    <p>Join with us for newsletter and other related articales. We will aslo inform you all the new collection once arrived and the discount at our stores.</p>
+                                    <div class="newsletter">
+                                        <input type="email" placeholder="email">
+                                        <a class="button"> Submit</a>
+                                    </div>
+                                </div>
+                                <div class="col-1">
+                                     <div class="social-links">
+                                        <i class="fa fa-facebook-official"></i>
+                                        <i class="fa fa-instagram"></i>
+                                        <i class="fa fa-snapchat"></i>
+                                        <i class="fa fa-pinterest-p"></i>
+                                        <i class="fa fa-twitter"></i>
+                                        <i class="fa fa-linkedin"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="copyright">
+                Reserved &#169: Rajib Dey
+            </div>
+        </footer>
+        
+    </body>
+</html>

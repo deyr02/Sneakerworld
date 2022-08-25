@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sneaker World</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap" rel="stylesheet">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXP7odgP5-946_7GSYwCO7O-LRupYWoVY&callback=initMap"
+  type="text/javascript"></script>
+        <script type="text/javascript" src="sneakerworkd_db.json"></script>
+        <script  src="myscript.js"></script>
+
+    
+    </head>
+    <body>
+        <nav>
+            <div class="container">
+
+                <div class="nav-control">
+                    <div class="row">
+                        <div class="desktop-nav"><a onclick="transferToSneakerCollection('sale', 'new in')">New arrival</a></div>
+                        <div class="desktop-nav"><a onclick="transferToSneakerCollection('gender', 'women')">Women</a></div>
+                        <div class="desktop-nav"><a onclick="transferToSneakerCollection('gender', 'men')">Men</a></div>
+                        <div class="desktop-nav"><a onclick="transferToSneakerCollection('sale', 'on sale')">On sale</a></div>
+                        <div class="desktop-nav"><div class="drop-down"> 
+                            <a>Brands <i class="fa fa-caret-down"></i></a>
+                            <div class="drop-down-content">
+                                <a onclick="transferToSneakerCollection('brand', 'BID102')">Adidas</a>
+                                <a onclick="transferToSneakerCollection('brand', 'BID103')">Converse</a>
+                                <a onclick="transferToSneakerCollection('brand', 'BID104')">Nike</a>
+                                <a onclick="transferToSneakerCollection('brand', 'BID105')">Puma</a>
+                                <a onclick="transferToSneakerCollection('brand', 'BID106')">Vans</a>
+                                <a onclick="transferToSneakerCollection('brand', 'BID107')">Onitsuka Tiger</a>
+                                    </div>
+
+                                    </div>
+                        </div>
+                        
+                        
+                        
+                   
+                     
+                        <span></span>
+                        <input id="search-text"  type="text" placeholder="Type here to search item">          
+                        <a><i onclick="searchClick(this, '#search-text')" class="fa fa-search"></i></a>
+                        <div class="mobile-nav">
+                        <a onclick="displayMobileNav(this)" class="mobile-nav"><i class="fa fa-bars"></i> </a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div id="desktop-search-output" class="nav-search">
+                    <!---  these codes are generate in displaysearchOuptput() funcuntion
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="content">
+                                <div class="img-block">
+                                    <img src="image/product/1183A201_001_SR_FR_GLB-1.jpg">
+                                </div>
+                                <div class="details-block">
+                                    <div class="name">AnitSuka tiger</div>
+                                    <div class="style">Mexico 66</div>
+                                    <div class="price">200.00</div>
+                                    <div class="show"><a>view</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5"><div class="content"><a class="button">View all()</a></div></div>
+                    </div>
+                    -->
+                </div>
+                <div class="mobile-nav-item mobile-nav">
+                     <div class="mobile-icon">
+                            <a href="stores.html"><i class="fa fa-map-marker"></i></a>
+                            <a href="saved_item.html"><i class="fa fa-heart"></i></a>
+                            <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                    
+                     <div class="row">
+                            <a onclick="transferToSneakerCollection('sale', 'new in')">New arrival</a>
+                            <a onclick="transferToSneakerCollection('gender', 'women')">Women</a>
+                            <a onclick="transferToSneakerCollection('gender', 'men')">Men</a>
+                            <a onclick="transferToSneakerCollection('sale', 'on sale')">On sale</a>
+                            <div class="drop-down"> 
+                                <a>Brands <i class="fa fa-caret-down"></i></a>
+                                <div class="drop-down-content">
+                                    <a onclick="transferToSneakerCollection('brand', 'BID102')">Adidas</a>
+                                    <a onclick="transferToSneakerCollection('brand', 'BID103')">Converse</a>
+                                    <a onclick="transferToSneakerCollection('brand', 'BID104')">Nike</a>
+                                    <a onclick="transferToSneakerCollection('brand', 'BID105')">Puma</a>
+                                    <a onclick="transferToSneakerCollection('brand', 'BID106')">Vans</a>
+                                    <a onclick="transferToSneakerCollection('brand', 'BID107')">Onitsuka Tiger</a>
+                                </div>
+
+                            </div>
+                        
+                        </div>
+                </div>
+                
+                <div class="nav-other">
+                    <div class=" row">
+                        <a href="stores.html"><i class="fa fa-map-marker"></i></a>
+                        <a href="saved_item.html"><i class="fa fa-heart"></i></a>
+                        <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+                <a href="index.html">
+                    <div  class="nav-logo">
+                    </div>
+                </a>
+              
+               
+            </div>
+        </nav>
+      
+
+        
+        <section class="store-page">
+            <div class="container">
+                <div class="store">
+                    <div class="shop">
+                        
+                        <div class="address">
+                            <div class="name">Sneaker-world Westgateasdfasdfasdfasdfsadfsdfsdfsd</div>
+                            <div class="shopNumber">Shop F02, Westgate Shopping Centre</div>
+                            <div class="street">Freed Tylor drive, Wesgate, Auckland, 0657, New Zealand</div>
+                            <div class="phone"><i class="fa fa-phone"> 09 111 66666</i></div>
+                        </div>
+                                       
+                        <div class="address">
+                            <div class="name">Sneaker-world Westgate</div>
+                            <div class="shopNumber">Shop F02, Westgate Shopping Centre</div>
+                            <div class="addressr">Freed Tylor drive, Wesgate, Auckland, 0657, New Zealand</div>
+                            <div class="phone"><i class="fa fa-phone"> </i>09 111 66666</div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="store_in_map" class="map">
+                    </div>
+                </div>
+                
+            
+            </div>
+        </section>
+        
+
+        
+        
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="content">
+                            <div class="row">
+                              <div class="col-3">
+                                    <h3>locations</h3>
+                                    <a href="stores.html">Find the nearest Shop</a>
+                                    <h3>About us</h3>
+                                    <a href="about.html">About Sneaker World</a>
+                                    <a href="career.html">Careers</a>
+                                    <a href="trams_condition.html">Terms and condition</a>
+
+                                </div>
+                                <div  class="col-3">
+                                    <h3> New Arrivals</h3>
+                                    <a onclick= "transferToSneakerCollection('newincollection', 'men')"> Men</a>
+                                    <a  onclick= "transferToSneakerCollection('newincollection', 'women')"> Women</a>
+                                    <h3>On sale</h3>
+                                     <a onclick= "transferToSneakerCollection('onsalecollection', 'men')">Men</a>
+                                     <a onclick= "transferToSneakerCollection('onsalecollection', 'women')">Women</a>
+                                </div>
+                                
+                                <div class="col-3">
+                                    <h3>Fit guide</h3>
+                                    <a>Men</a>
+                                    <a>Women</a>
+                                    <h3>Others</h3>
+                                    <a href="cart.html">Shopping Cart</a>
+                                    <a href="saved_item.html">Saved item</a>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-1">
+                                    <h3>Drop  your email address</h3>
+                                    <p>Join with us for newsletter and other related articales. We will aslo inform you all the new collection once arrived and the discount at our stores.</p>
+                                    <div class="newsletter">
+                                        <input type="email" placeholder="email">
+                                        <a class="button"> Submit</a>
+                                    </div>
+                                </div>
+                                <div class="col-1">
+                                     <div class="social-links">
+                                        <i class="fa fa-facebook-official"></i>
+                                        <i class="fa fa-instagram"></i>
+                                        <i class="fa fa-snapchat"></i>
+                                        <i class="fa fa-pinterest-p"></i>
+                                        <i class="fa fa-twitter"></i>
+                                        <i class="fa fa-linkedin"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="copyright">
+                Reserved &#169: Rajib Dey
+            </div>
+        </footer>
+        
+        <script>
+            $(document).ready(function(){
+                loadStore();
+          
+            });
+            
+              function initMap() {
+                var mapProp= {
+                  center:new google.maps.LatLng(-36.86622296161294, 174.75887275942907),
+                  zoom: 11.35,
+                };
+                  
+                 var _store100 = {
+                     center: new google.maps.LatLng(-36.84791998250888, 174.76593251608344),
+                     zoom: 15,
+                 };                  
+                 var _store101 = {
+                     center: new google.maps.LatLng(-36.84791998250888, 174.76593251608344),
+                     zoom: 15,
+                 };                  
+                 var _store102 = {
+                     center: new google.maps.LatLng(-36.870777976050434, 174.77689712912982),
+                     zoom: 15,
+                 };                  
+                 var _store103 = {
+                     center: new google.maps.LatLng(-36.882885020398156, 174.7331984577835),
+                     zoom: 15,
+                 };                  
+                 var _store104 = {
+                     center: new google.maps.LatLng(-36.91453490879949, 174.83918442421998),
+                     zoom: 15,
+                 };                  
+                 var _store105 = {
+                     center: new google.maps.LatLng(-36.72823415626414, 174.70967035235745),
+                     zoom: 15,
+                 };                  
+                 var _store106 = {
+                     center: new google.maps.LatLng(-36.817593764184664, 174.60172558477328),
+                     zoom: 15,
+                 };                  
+                 var _store107 = {
+                     center: new google.maps.LatLng(-36.933310191949616, 174.912766563307),
+                     zoom: 15,
+                 };                 
+                 var _store108 = {
+                     center: new google.maps.LatLng(-36.99251397594163, 174.88524597145312),
+                     zoom: 15,
+                 };
+                  
+                var map = new google.maps.Map(document.getElementById("store_in_map"),mapProp);
+                  
+                  ///store101
+                  var marker101 = new google.maps.Marker({
+                      position: {lat:-36.84791998250888, lng:174.76593251608344},
+                      animation:google.maps.Animation.BOUNCE,
+                      icon:'image/logo/google-marker.png'
+                  });
+                  marker101.setMap(map); 
+                  var info101 = new google.maps.InfoWindow({
+                      content: 'Sneaker world'
+                  })
+                  info101.open(map, marker101);
+                  
+                     ///store102
+                  var marker102 = new google.maps.Marker({
+                      position: {lat:-36.870777976050434, lng:174.77689712912982},
+                      animation:google.maps.Animation.BOUNCE,
+                      icon:'image/logo/google-marker.png'
+                  });
+                  marker102.setMap(map);   
+                   var info102 = new google.maps.InfoWindow({
+                      content: 'Sneaker world - Newmarket'
+                  })
+                  info102.open(map, marker102);
+                  
+                  
+                     ///store103
+                  var marker103 = new google.maps.Marker({
+                      position: {lat:-36.882885020398156, lng:174.7331984577835},
+                      animation:google.maps.Animation.BOUNCE,
+                      icon:'image/logo/google-marker.png'
+                  });
+                  marker103.setMap(map);  
+                   var info103 = new google.maps.InfoWindow({
+                      content: 'Sneaker world -St Luke'
+                  })
+                  info103.open(map, marker103);
+                  
+                  
+                     ///store104
+                  var marker104 = new google.maps.Marker({
+                      position: {lat:-36.91453490879949, lng:174.83918442421998},
+                      animation:google.maps.Animation.BOUNCE,
+                      icon:'image/logo/google-marker.png'
+                  });
+                  marker104.setMap(map); 
+                   var info104 = new google.maps.InfoWindow({
+                      content: 'Sneaker world - Sylvia Park'
+                  })
+                  info104.open(map, marker104);
+                  
+                  
+                     ///store105
+                  var marker105 = new google.maps.Marker({
+                      position: {lat:-36.72823415626414, lng:174.70967035235745},
+                      animation:google.maps.Animation.BOUNCE,
+                      icon:'image/logo/google-marker.png'
+                  });
+                  marker105.setMap(map);    
+                   var info105 = new google.maps.InfoWindow({
+                      content: 'Sneaker world - Albany'
+                  })
+                  info105.open(map, marker105);
+                  
+                  
+                     ///store106
+                  var marker106 = new google.maps.Marker({
+                      position: {lat:-36.817593764184664, lng:174.60172558477328},
+                      animation:google.maps.Animation.BOUNCE,
+                      icon:'image/logo/google-marker.png'
+                  });
+                  marker106.setMap(map); 
+                   var info106 = new google.maps.InfoWindow({
+                      content: 'Sneaker world - Westgate'
+                  })
+                  info106.open(map, marker106);
+                  
+                  
+                     ///store107
+                  var marker107 = new google.maps.Marker({
+                      position: {lat:-36.933310191949616, lng:174.912766563307},
+                      animation:google.maps.Animation.BOUNCE,
+                      icon:'image/logo/google-marker.png'
+                  });
+                  marker107.setMap(map); 
+                   var info107 = new google.maps.InfoWindow({
+                      content: 'Sneaker world - Botany'
+                  })
+                  info107.open(map, marker107);
+                  
+                  
+                     ///store108
+                  var marker108 = new google.maps.Marker({
+                      position: {lat:-36.99251397594163, lng:174.88524597145312},
+                      animation:google.maps.Animation.BOUNCE,
+                      icon:'image/logo/google-marker.png'
+                  });
+                  marker108.setMap(map);  
+                   var info108 = new google.maps.InfoWindow({
+                      content: 'Sneaker world - Manukau'
+                  })
+                  info108.open(map, marker108);
+                  
+             
+                  google.maps.event.addListener(marker101,'click',function() {
+                      map.setZoom(20);
+                      map.setCenter(marker101.getPosition());
+                    });
+                  
+                  
+                          
+             
+                  google.maps.event.addListener(marker102,'click',function() {
+                      map.setZoom(20);
+                      map.setCenter(marker102.getPosition());
+                    });
+                  
+                  
+                          
+             
+                  google.maps.event.addListener(marker103,'click',function() {
+                      map.setZoom(20);
+                      map.setCenter(marker103.getPosition());
+                    });
+                  
+                  
+                          
+             
+                  google.maps.event.addListener(marker104,'click',function() {
+                      map.setZoom(20);
+                      map.setCenter(marker104.getPosition());
+                    });
+                  
+                  
+                          
+             
+                  google.maps.event.addListener(marker105,'click',function() {
+                      map.setZoom(20);
+                      map.setCenter(marker105.getPosition());
+                    });
+                  
+                  
+                          
+             
+                  google.maps.event.addListener(marker106,'click',function() {
+                      map.setZoom(20);
+                      map.setCenter(marker106.getPosition());
+                    });
+                  
+                  
+                          
+             
+                  google.maps.event.addListener(marker107,'click',function() {
+                      map.setZoom(20);
+                      map.setCenter(marker107.getPosition());
+                    });
+                  
+                  
+                          
+             
+                  google.maps.event.addListener(marker108,'click',function() {
+                      map.setZoom(20);
+                      map.setCenter(marker108.getPosition());
+                    });
+                  
+                  
+                 $( $(".address")[0]).on("click", function(){
+                     clear_selection();
+                     $($(".address")[0]).addClass("selected");
+                     map.setZoom(20);
+                     map.setCenter(marker101.getPosition());
+                 });      
+                  
+                  $( $(".address")[1]).on("click", function(){
+                     clear_selection();
+                     $($(".address")[1]).addClass("selected");
+                     map.setZoom(20);
+                     map.setCenter(marker101.getPosition());
+                 });
+                       
+                  
+                  $( $(".address")[2]).on("click", function(){
+                     clear_selection();
+                     $($(".address")[2]).addClass("selected");
+                     map.setZoom(20);
+                     map.setCenter(marker102.getPosition());
+                 });
+                       
+                  
+                  $( $(".address")[3]).on("click", function(){
+                     clear_selection();
+                     $($(".address")[3]).addClass("selected");
+                     map.setZoom(20);
+                     map.setCenter(marker103.getPosition());
+                 });
+                       
+                  
+                  $( $(".address")[4]).on("click", function(){
+                     clear_selection();
+                     $($(".address")[4]).addClass("selected");
+                     map.setZoom(20);
+                     map.setCenter(marker104.getPosition());
+                 });
+                       
+                  
+                  $( $(".address")[5]).on("click", function(){
+                     clear_selection();
+                     $($(".address")[5]).addClass("selected");
+                     map.setZoom(20);
+                     map.setCenter(marker105.getPosition());
+                 });
+                       
+                  
+                  $( $(".address")[6]).on("click", function(){
+                     clear_selection();
+                     $($(".address")[6]).addClass("selected");
+                     map.setZoom(20);
+                     map.setCenter(marker106.getPosition());
+                 });
+                       
+                  
+                  $( $(".address")[7]).on("click", function(){
+                     clear_selection();
+                     $($(".address")[7]).addClass("selected");
+                     map.setZoom(20);
+                     map.setCenter(marker107.getPosition());
+                 });
+                       
+                  
+                  $( $(".address")[8]).on("click", function(){
+                     clear_selection();
+                     $($(".address")[8]).addClass("selected");
+                     map.setZoom(20);
+                     map.setCenter(marker108.getPosition());
+                 });
+                  
+                  
+                  
+                }
+
+        </script>
+        
+    </body>
+</html>

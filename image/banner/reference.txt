@@ -1,0 +1,5 @@
+nike:
+https://static.nike.com/a/images/f_auto/dpr_1.0/w_1793,c_limit/f7481115-b7de-4946-b8be-2e06bd99fdd1/nike-just-do-it.jpg
+https://static.nike.com/a/images/f_auto/dpr_1.0/w_888,c_limit/d911c666-8cef-46dc-b749-9cf581d434c0/nike-just-do-it.jpg
+https://static.nike.com/a/images/f_auto/dpr_1.0/w_1793,c_limit/d915c772-16da-4ae5-8ea5-04b792d34392/nike-just-do-it.jpg
+video: https://www.youtube.com/watch?v=yshNZlWezDk

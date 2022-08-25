@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sneaker World</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap" rel="stylesheet">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXP7odgP5-946_7GSYwCO7O-LRupYWoVY&callback=initMap"
+  type="text/javascript"></script>
+        <script type="text/javascript" src="sneakerworkd_db.json"></script>
+        <script  src="myscript.js"></script>
+
+    
+    </head>
+    <body>
+        <nav>
+            <div class="container">
+
+                <div class="nav-control">
+                    <div class="row">
+                        <div class="desktop-nav"><a onclick="transferToSneakerCollection('sale', 'new in')">New arrival</a></div>
+                        <div class="desktop-nav"><a onclick="transferToSneakerCollection('gender', 'women')">Women</a></div>
+                        <div class="desktop-nav"><a onclick="transferToSneakerCollection('gender', 'men')">Men</a></div>
+                        <div class="desktop-nav"><a onclick="transferToSneakerCollection('sale', 'on sale')">On sale</a></div>
+                        <div class="desktop-nav"><div class="drop-down"> 
+                            <a>Brands <i class="fa fa-caret-down"></i></a>
+                            <div class="drop-down-content">
+                                <a onclick="transferToSneakerCollection('brand', 'BID102')">Adidas</a>
+                                <a onclick="transferToSneakerCollection('brand', 'BID103')">Converse</a>
+                                <a onclick="transferToSneakerCollection('brand', 'BID104')">Nike</a>
+                                <a onclick="transferToSneakerCollection('brand', 'BID105')">Puma</a>
+                                <a onclick="transferToSneakerCollection('brand', 'BID106')">Vans</a>
+                                <a onclick="transferToSneakerCollection('brand', 'BID107')">Onitsuka Tiger</a>
+                                    </div>
+
+                                    </div>
+                        </div>
+                        
+                        
+                        
+                   
+                     
+                        <span></span>
+                        <input id="search-text"  type="text" placeholder="Type here to search item">          
+                        <a><i onclick="searchClick(this, '#search-text')" class="fa fa-search"></i></a>
+                        <div class="mobile-nav">
+                        <a onclick="displayMobileNav(this)" class="mobile-nav"><i class="fa fa-bars"></i> </a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div id="desktop-search-output" class="nav-search">
+                    <!---  these codes are generate in displaysearchOuptput() funcuntion
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="content">
+                                <div class="img-block">
+                                    <img src="image/product/1183A201_001_SR_FR_GLB-1.jpg">
+                                </div>
+                                <div class="details-block">
+                                    <div class="name">AnitSuka tiger</div>
+                                    <div class="style">Mexico 66</div>
+                                    <div class="price">200.00</div>
+                                    <div class="show"><a>view</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5"><div class="content"><a class="button">View all()</a></div></div>
+                    </div>
+                    -->
+                </div>
+                <div class="mobile-nav-item mobile-nav">
+                     <div class="mobile-icon">
+                            <a href="stores.html"><i class="fa fa-map-marker"></i></a>
+                            <a href="saved_item.html"><i class="fa fa-heart"></i></a>
+                            <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                    
+                     <div class="row">
+                            <a onclick="transferToSneakerCollection('sale', 'new in')">New arrival</a>
+                            <a onclick="transferToSneakerCollection('gender', 'women')">Women</a>
+                            <a onclick="transferToSneakerCollection('gender', 'men')">Men</a>
+                            <a onclick="transferToSneakerCollection('sale', 'on sale')">On sale</a>
+                            <div class="drop-down"> 
+                                <a>Brands <i class="fa fa-caret-down"></i></a>
+                                <div class="drop-down-content">
+                                    <a onclick="transferToSneakerCollection('brand', 'BID102')">Adidas</a>
+                                    <a onclick="transferToSneakerCollection('brand', 'BID103')">Converse</a>
+                                    <a onclick="transferToSneakerCollection('brand', 'BID104')">Nike</a>
+                                    <a onclick="transferToSneakerCollection('brand', 'BID105')">Puma</a>
+                                    <a onclick="transferToSneakerCollection('brand', 'BID106')">Vans</a>
+                                    <a onclick="transferToSneakerCollection('brand', 'BID107')">Onitsuka Tiger</a>
+                                </div>
+
+                            </div>
+                        
+                        </div>
+                </div>
+                
+                <div class="nav-other">
+                    <div class=" row">
+                        <a href="stores.html"><i class="fa fa-map-marker"></i></a>
+                        <a href="saved_item.html"><i class="fa fa-heart"></i></a>
+                        <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+                <a href="index.html">
+                    <div  class="nav-logo">
+                    </div>
+                </a>
+              
+               
+            </div>
+        </nav>
+      
+
+        
+        <section class="terms">
+            <div class="container">
+                <div class="terms">
+                    <img src="image/banner/trams_condition.jpg">
+                    
+                    <div class="terms_condition">
+                        <h2>Terms and Condition</h2>
+                      
+                        <div>Terms and Conditions are being written. </div>
+                        
+                    </div>
+                </div>
+                
+            
+            </div>
+        </section>
+        
+
+        
+        
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="content">
+                            <div class="row">
+                              <div class="col-3">
+                                    <h3>locations</h3>
+                                    <a href="stores.html">Find the nearest Shop</a>
+                                    <h3>About us</h3>
+                                    <a href="about.html">About Sneaker World</a>
+                                    <a href="career.html">Careers</a>
+                                    <a href="trams_condition.html">Terms and condition</a>
+
+                                </div>
+                                <div  class="col-3">
+                                    <h3> New Arrivals</h3>
+                                    <a onclick= "transferToSneakerCollection('newincollection', 'men')"> Men</a>
+                                    <a  onclick= "transferToSneakerCollection('newincollection', 'women')"> Women</a>
+                                    <h3>On sale</h3>
+                                     <a onclick= "transferToSneakerCollection('onsalecollection', 'men')">Men</a>
+                                     <a onclick= "transferToSneakerCollection('onsalecollection', 'women')">Women</a>
+                                </div>
+                                
+                                <div class="col-3">
+                                    <h3>Fit guide</h3>
+                                    <a>Men</a>
+                                    <a>Women</a>
+                                    <h3>Others</h3>
+                                    <a href="cart.html">Shopping Cart</a>
+                                    <a href="saved_item.html">Saved item</a>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-1">
+                                    <h3>Drop  your email address</h3>
+                                    <p>Join with us for newsletter and other related articales. We will aslo inform you all the new collection once arrived and the discount at our stores.</p>
+                                    <div class="newsletter">
+                                        <input type="email" placeholder="email">
+                                        <a class="button"> Submit</a>
+                                    </div>
+                                </div>
+                                <div class="col-1">
+                                     <div class="social-links">
+                                        <i class="fa fa-facebook-official"></i>
+                                        <i class="fa fa-instagram"></i>
+                                        <i class="fa fa-snapchat"></i>
+                                        <i class="fa fa-pinterest-p"></i>
+                                        <i class="fa fa-twitter"></i>
+                                        <i class="fa fa-linkedin"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="copyright">
+                Reserved &#169: Rajib Dey
+            </div>
+        </footer>
+        
+        <script>
+        
+             
+        </script>
+        
+    </body>
+</html>

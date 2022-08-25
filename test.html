@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            canvas {
+                background-repeat: repeat;
+            }
+
+        </style>
+    </head>
+<body>
+
+<p>How to access nested JSON objects.</p>
+
+<p id="demo"></p>
+<script src="sneakerworkd_db.json" type="text/javascript"></script>
+<script>
+    //let _data = JSON.parse(data);
+    console.log(data["sneaker"].SID101.name);
+    
+
+
+    
+</script>
+    
+    
+    <canvas id="canvas101">
+    </canvas>
+    
+    
+    <script>
+    
+            let _canvas = document.getElementById("canvas101");
+    console.log(_canvas);
+        _canvas.width  = 1000;
+        _canvas.height =1000;
+    let _context = _canvas.getContext('2d');
+    
+    let _img_1 = new Image();
+    _img_1.src = "image/product/adidas-originals-basket-profi%20(8).jpg";
+    _context.globalAlpha = 1;
+    _context.drawImage(_img_1, 0, 0, 100, 100);
+        
+        
+         let _img_2 = new Image();
+    _img_2.src = "image/product/adidas-originals-basket-profi%20(7).jpg";
+        
+        _context.globalAlpha = 1;
+
+    _context.drawImage(_img_2, 100, 0, 100, 100); 
+  
+        
+
+    
+    </script>
+    
+</body>
+</html>
